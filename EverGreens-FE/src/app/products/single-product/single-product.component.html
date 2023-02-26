@@ -1,0 +1,21 @@
+
+<div *ngIf="product" class="container">
+    <div class="product-image">
+        <img [src]="product.imgUrl" [alt]="product.name">
+    </div>
+    <div class="product-details">
+        <h3>{{product.name}}</h3>
+        <div class="description">
+            <p>{{product.description}}</p>
+        </div>
+        <div class="price">
+          <p>{{product.price | currency: 'Ksh'}}</p>  
+        </div>
+        <div class="add-btn">
+            <button>Add to cart</button>
+        </div>
+    </div>
+</div>
+
+
+
