@@ -6,29 +6,18 @@
 			<tr>
 				<th>Product Name</th>
 				<th>Category</th>
-				<th>Quantity (Kg)</th>
+				<th>Description</th>
 				<th>Unit Price(Ksh)</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>Mangoes</td>
-				<td>Fresh produce</td>
-				<td>50</td>
-				<td>150 </td>
+			<tr *ngFor=" let product of products">
+				<td>{{product.name}}</td>
+				<td>{{product.category}}</td>
+				<td>{{product.description}}</td>
+				<td>{{product.price}} </td>
 			</tr>
-			<tr>
-				<td>Pork</td>
-				<td>Meat</td>
-				<td>60 </td>
-				<td>600 </td>
-			</tr>
-			<tr>
-				<td>Rice Noodles</td>
-				<td>Pre-made Foods</td>
-				<td>50</td>
-				<td>70 </td>
-			</tr>
+			
 		</tbody>
 	</table>
 </body>

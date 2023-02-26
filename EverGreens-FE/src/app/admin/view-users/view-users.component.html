@@ -10,12 +10,12 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>Mary</td>
-				<td>marry@gmail.com</td>
+			<tr *ngFor=" let user of users">
+				<td>{{user.name}}</td>
+				<td>{{user.email}}</td>
 				
 			</tr>
-			<tr>
+			<!-- <tr>
 				<td>Ian</td>
 				<td>ian@gmail.com</td>
 				
@@ -24,7 +24,7 @@
 				<td>Kuku</td>
 				<td>kuku@gmail.com</td>
 				
-			</tr>
+			</tr> -->
 		</tbody>
 	</table>
 </body>
