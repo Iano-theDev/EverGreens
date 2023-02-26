@@ -1,4 +1,4 @@
-USE [comfortyEcommerce]
+USE [everGreens]
 GO
 CREATE PROCEDURE RemoveOrReduceQuantity
     @id VARCHAR(255)

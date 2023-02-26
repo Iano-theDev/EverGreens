@@ -1,6 +1,6 @@
-CREATE DATABASE comfortyEcommerce
+CREATE DATABASE everGreens
 GO
-USE [comfortyEcommerce]
+USE [everGreens]
 GO
 CREATE TABLE Categories (
     id VARCHAR(255) PRIMARY KEY,

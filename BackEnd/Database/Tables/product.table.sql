@@ -1,4 +1,4 @@
-USE [comfortyEcommerce]
+USE [everGreens]
 GO
 CREATE TABLE Products
 (

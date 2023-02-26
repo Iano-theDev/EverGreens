@@ -1,5 +1,5 @@
 
-USE [comfortyEcommerce]
+USE [everGreens]
 GO
 CREATE PROCEDURE DeleteUser
     @id VARCHAR(255)

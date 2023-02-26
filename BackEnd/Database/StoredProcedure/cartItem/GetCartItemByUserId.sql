@@ -1,4 +1,4 @@
-USE [comfortyEcommerce]
+USE [everGreens]
 GO
 CREATE PROCEDURE GetCartItemByUserId
     @user_id VARCHAR(255)

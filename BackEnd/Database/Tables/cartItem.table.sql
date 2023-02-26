@@ -1,5 +1,5 @@
 
-USE [comfortyEcommerce]
+USE [everGreens]
 GO
 CREATE TABLE Cart_items (
     id VARCHAR(255) PRIMARY KEY,

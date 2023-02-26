@@ -1,4 +1,4 @@
-USE [comfortyEcommerce]
+USE [everGreens]
 GO
 CREATE PROCEDURE GetReviewByProductId
 @product_id VARCHAR(255)

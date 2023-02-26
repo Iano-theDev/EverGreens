@@ -1,4 +1,4 @@
-USE [comfortyEcommerce]
+USE [everGreens]
 GO
 CREATE PROCEDURE InsertOrUpdatePayment
 @id VARCHAR(255),
