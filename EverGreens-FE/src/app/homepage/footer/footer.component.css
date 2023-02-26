@@ -1,0 +1,23 @@
+.footer-container{
+    background-color: #10c900;
+
+    
+}
+.social_media{
+    width: 350px;
+    height: 30px;
+    border: 2px solid white;
+    margin: auto;
+}
+h1{
+    color: white;
+    text-align: center;
+    
+}
+.copyright{    
+text-align: center ;
+font-size: 1.5em;
+color: white;
+font-weight: bold;
+
+}

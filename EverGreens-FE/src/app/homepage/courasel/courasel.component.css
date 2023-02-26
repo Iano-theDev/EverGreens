@@ -1,0 +1,45 @@
+
+.carousel {
+    margin: auto;
+    width: 20%;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+  }
+  
+  .slide {
+    background-image: url("https://images.pexels.com/photos/1055782/pexels-photo-1055782.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    animation: move 8s infinite linear;
+  }
+  
+  .slide:nth-child(2) {
+    background-image: url("https://images.pexels.com/photos/414799/pexels-photo-414799.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    animation-delay: 1s;
+  }
+  
+  .slide:nth-child(3) {
+    background-image: url("https://images.pexels.com/photos/1795101/pexels-photo-1795101.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    animation-delay: 3s;
+  }
+  
+  .slide:nth-child(4) {
+    background-image: url("https://images.pexels.com/photos/1042204/pexels-photo-1042204.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    animation-delay: 5s;
+  }
+  
+  @keyframes move {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  

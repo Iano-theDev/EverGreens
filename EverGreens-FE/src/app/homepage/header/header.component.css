@@ -1,0 +1,49 @@
+.main_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    height: 30vh;
+}
+.top_nav {
+    display: flex;
+    gap: 40px;
+}
+.bottom_nav {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+.bottom_nav a{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+
+}
+.shopbrand{
+   background-color:  #10c900;
+   width: 90px;
+   height: 30px;
+   border-radius: 20px;
+   text-align: center;
+   padding: 5px;
+}
+h1{
+    color: #10c900;
+}
+input{
+    width: 400px;
+    height: 30px;
+    border-radius: 50px;
+    margin-top: 20px;
+
+}
+label{
+    align-items: center;
+    margin-top: 30px;
+    font-size: 1.3em;
+   
+}
+.material-symbols-outlined{
+    font-size: 3em;
+}
