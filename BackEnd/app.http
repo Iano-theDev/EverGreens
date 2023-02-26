@@ -1,0 +1,377 @@
+
+### 1. Get all users
+GET  https://ridespark.ml/api/users
+
+### 2. Get a user by id
+GET   https://ridespark.ml/api/users/8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8
+
+
+### 3. Create a user
+
+POST   https://ridespark.ml/api/users/register
+Content-Type: application/json
+
+
+
+{
+    "email": "summertech1024@gmail.com",
+    "password": "123456",
+    "phone":"0710383551"
+}
+
+
+### 4. Update a user
+
+PUT   https://ridespark.ml/api/users/45d8bf9f-8767-4441-b934-cb7342026cae
+Content-Type: application/json
+
+ {
+    "id": "45d8bf9f-8767-4441-b934-cb7342026cae",
+    "email": "onesmuswambugu135@gmail.com",
+    "password": "123456",
+    "created_at": "2023-02-12T00:00:00.000Z",
+    "is_admin": true,
+    "is_deleted": false,
+    "phone": "0710383551",
+    "is_sent": false
+  }
+
+
+### 5. Delete a user
+
+DELETE   https://ridespark.ml/api/users/3711d8fc-0fed-49c4-a019-f03c862ecf92
+
+### 6. Login a user
+
+POST   https://ridespark.ml/api/users/login
+Content-Type: application/json
+
+{
+   "email": "onesmuswambugu135@gmail.com",
+    "password": "123456"
+}
+
+
+### 7. Get all products
+
+GET   https://ridespark.ml/api/products
+
+
+### 8. Get a product by id
+GET   https://ridespark.ml/api/products/1
+
+
+### 9. Create a product
+
+POST  http://localhost:3002/api/products
+Content-Type: application/json
+
+{
+    "name": "Chair",
+    "description":"Best ",
+    "price": 200,
+    "category_id": "3bd5ab2c-e17f-4d35-8f2f-c7d22b4018f3",
+    "product_image_url":"https://media.istockphoto.com/id/1387467858/photo/tray-with-a-cup-of-hot-coffee-with-sweets-and-a-nice-plant-by-the-window-of-the-house-have.jpg?b=1&s=170667a&w=0&k=20&c=xoqkk3XGw-G2rVkRAUjQ2ZLTkNu_Dd9aUJq3mfqP7uc=",
+    "recently_added":"1",
+    "featured":"1",
+    "is_deleted":"0"
+
+}
+
+### 10. Update a product
+
+PUT   https://ridespark.ml/api/products/1
+Content-Type: application/json
+
+{
+    "id": "1",
+    "name": "test",
+    "description":"test",
+    "price": 100,
+    "category_id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "product_image_url":"test",
+    "recently_added":"1",
+    "featured":"1",
+    "is_deleted":"0"
+}
+
+
+### 11. Delete a product
+
+DELETE   https://ridespark.ml/api/products/72836104-8256-4264-aa67-0c024aaa62d3
+
+
+### 12. product by category
+
+GET   https://ridespark.ml/api/products/category/12857889-5b30-46e7-b76c-5547e6166499
+
+
+### 13. Get product that belong to a top level category
+
+GET   https://ridespark.ml/api/products/category/top/level
+
+
+### 14. Get all categories
+
+GET   https://ridespark.ml/api/categories
+
+### 15. create a category
+
+POST   https://ridespark.ml/api/categories
+Content-Type: application/json
+
+{
+    "name": "sofa",
+    "is_top_level": "1"
+}
+
+### 16. Get a category by name
+
+GET   https://ridespark.ml/api/categories/name/sofa
+
+
+### 17. Get a category by id
+
+GET   https://ridespark.ml/api/categories/12857889-5b30-46e7-b76c-5547e6166499
+
+
+
+### cartItems API
+
+### 1. Get all cartItems
+
+
+### 2. Get a cartItem by user id
+
+GET   http://localhost:3002/api/cartitems
+
+
+### 3. Create a cartItem include token in header
+
+POST   https://ridespark.ml/api/cartitems
+Content-Type: application/json
+
+{
+    "user_id": "8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8",
+    "product_id": "1",
+    "quantity": "1"
+}
+
+
+### 4. Update a cartItem
+
+PUT   https://ridespark.ml/api/cartitems
+Content-Type: application/json
+
+{
+    "id":"7db1ec45-c49b-4c4b-8bc7-e5ca2b3b01eb64",
+    "user_id": "8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8",
+    "product_id": "12857889-5b30-46e7-b76c-554n7e6166499",
+    "quantity": "1"
+}
+
+### 5. Delete a cartItem
+
+DELETE   https://ridespark.ml/api/cartitems/7db1ec45-c49b-4c4b-8bc7-e5ca2b301e64
+
+
+### removeOrUpdateQuantity 
+
+put  https://ridespark.ml/api/cartitems/removeOrReduceQuantity/7db1ec45-c49b-4c4b-8bc7-e5ca2b301e64
+Content-Type: application/json
+
+{
+    "id": "4b523aa4-16ab-4c20-a58f-33ef70a04bb8",
+    "user_id": "8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8",
+    "product_id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "quantity": "1"
+}
+
+
+### 6. Get all orders
+
+GET   https://ridespark.ml/api/orders
+
+
+### 7. Get an order by id
+
+GET   https://ridespark.ml/api/orders/bbf7cc2d-e741-430f-acea-75dd40319ec5
+
+
+### 8. Create an order
+
+POST   http://localhost:4000/api/orders
+Content-Type: application/json
+
+
+{
+    "user_id": "a8e82a17-ff44-4d86-8d89-467088c14c56",
+    "is_paid": "0",
+    "is_delivered": "0",
+    "amount": "100"
+}
+
+
+### 9. Update an order
+
+PUT   https://ridespark.ml/api/orders/a120ac52-2098-4ee8-936e-fbf627bc1fe7
+Content-Type: application/json
+
+{
+    "id": "a120ac52-2098-4ee8-936e-fbf627bc1fe7",
+    "user_id": "8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8",
+    "is_paid": "0",
+    "is_delivered": "0",
+    "amount": "100"
+}
+
+### 10. Delete an order
+
+DELETE   https://ridespark.ml/api/orders/a120ac52-2098-4ee8-936e-fbf627bc1fe7
+
+### get by user id
+
+GET   https://ridespark.ml/api/orders/user/8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8
+
+
+
+#### create review
+
+POST   https://ridespark.ml/api/reviews
+Content-Type: application/json
+
+{
+    "user_id": "8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8",
+    "product_id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "rating": "5",
+    "review": "test",
+    "is_deleted": "0"
+}
+
+#### get review by product id
+
+GET   https://ridespark.ml/api/reviews/product/12857889-5b30-46e7-b76c-5547e6166499
+
+
+#### update review
+
+PUT   https://ridespark.ml/api/reviews
+Content-Type: application/json
+
+{
+    "id": "6ab4a8cf-890d-4fda-bef1-be399885cf5a",
+    "user_id": "8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8",
+    "product_id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "rating": "5",
+    "review": "test",
+    "is_deleted": "0"
+}
+
+#### delete review
+
+DELETE   https://ridespark.ml/api/reviews/6ab4a8cf-890d-4fda-bef1-be399885cf5a
+
+
+
+#### payment method api
+
+#### get all payment methods
+
+GET   https://ridespark.ml/api/paymentmethods
+
+
+#### get payment method by id
+
+GET   https://ridespark.ml/api/paymentmethods/12857889-5b30-46e7-b76c-5547e6166499
+
+
+
+#### create payment method
+
+POST   https://ridespark.ml/api/paymentmethods
+Content-Type: application/json
+
+{
+    "name": "M-pesa",
+    "description": "M-pesa payment method"
+
+}
+
+
+#### update payment method
+
+PUT   https://ridespark.ml/api/paymentmethods
+Content-Type: application/json
+
+{
+    "id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "name": "M-pesa",
+    "description": "M-pesa payment method"
+
+}
+
+
+#### get payment method by id
+
+GET   https://ridespark.ml/api/paymentmethods/12857889-5b30-46e7-b76c-5547e6166499
+
+
+### patymeent api
+
+#### create payment
+
+POST   https://ridespark.ml/api/payments
+Content-Type: application/json
+
+{
+    "user_id": "8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8",
+    "order_id": "bbf7cc2d-e741-430f-acea-75dd40319ec5",
+    "payment_method_id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "amount": "100"
+}
+
+
+#### update payment
+
+PUT   https://ridespark.ml/api/payments
+Content-Type: application/json
+
+{
+    "id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "user_id": "8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8",
+    "order_id": "bbf7cc2d-e741-430f-acea-75dd40319ec5",
+    "payment_method_id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "amount": "100"
+}
+
+
+### order item api
+
+#### create order item
+
+POST   https://ridespark.ml/api/orderitems
+Content-Type: application/json
+
+{
+    "order_id": "bbf7cc2d-e741-430f-acea-75dd40319ec5",
+    "product_id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "quantity": "1"
+}
+
+### update order item
+
+
+PUT   https://ridespark.ml/api/orderitems/12857889-5b30-46e7-b76c-5547e6166499
+Content-Type: application/json
+
+{
+    "id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "order_id": "bbf7cc2d-e741-430f-acea-75dd40319ec5",
+    "product_id": "12857889-5b30-46e7-b76c-5547e6166499",
+    "quantity": "1"
+}
+
+
+#### get order item by id
+
+GET   https://ridespark.ml/api/orderitems/12857889-5b30-46e7-b76c-5547e6166499

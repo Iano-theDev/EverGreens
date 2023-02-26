@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './auth/register/register/register.component';
 
 const routes: Routes = [
+<<<<<<< HEAD
   {path: 'register', 
     loadComponent:() => import('./auth/register/register/register.component').then(m => m.RegisterComponent)},
   {path: 'cart', 
@@ -28,6 +29,18 @@ const routes: Routes = [
   },
     
 ];
+=======
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+
+  // Lazy load the home module
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('./home/home.module').then((m) => m.HomeModule),
+  },
+
+]
+>>>>>>> f00b1f0a48736773aaea3a812683b6469a103307
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
