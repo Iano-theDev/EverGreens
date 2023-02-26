@@ -1,0 +1,10 @@
+
+
+<div class="popular">
+    <h1>Popular picks</h1>
+    <p>Check out our most popular products</p>
+
+    <div class="popular-picks">
+        <app-single-popular *ngFor="let popular of popularPicks" [popular]="popular"></app-single-popular>
+    </div>
+</div>
