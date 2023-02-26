@@ -1,0 +1,25 @@
+
+
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>Product Name</th>
+				<th>Category</th>
+				<th>Description</th>
+				<th>Unit Price(Ksh)</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor=" let product of products">
+				<td>{{product.name}}</td>
+				<td>{{product.category}}</td>
+				<td>{{product.description}}</td>
+				<td>{{product.price}} </td>
+			</tr>
+			
+		</tbody>
+	</table>
+</body>
+
+

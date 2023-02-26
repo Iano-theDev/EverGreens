@@ -1,0 +1,147 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-family: sans-serif;
+    /* height: 100vh; */
+    width: 98%;
+  }
+  
+  input[type=text] {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+  }
+  
+  button[type=submit] {
+    padding: 10px 15px;
+    background-color: #15CF3E;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  
+  button[type=submit]:hover {
+    background-color: #0b7dda;
+  }
+  .logo{
+    /* border: 2px solid rgb(136, 0, 255); */
+    margin-left: -53vw;
+    height:100px;
+    padding-top: 0px;
+    
+  }
+
+  h2{
+    /* padding: 5px; */
+    color: #15CF3E;
+}
+.admin{
+    color: purple;
+}
+
+form{
+    margin-left: 20vw;
+    margin-top: 30px;
+    /* object-fit: contain; */
+}
+.container{
+    width: 98vw;
+    height: 98vh;
+}
+.menu{
+    position: absolute;
+    width: 351px;
+    height: 599px;
+    
+    background: #AEAEAE;
+}
+.links{
+    gap: 20px;
+     margin-right: 200px; 
+}
+.links a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    
+    font-size: large;
+
+  }
+
+  .active{
+    color: red;
+}
+
+.content{
+    position: absolute;
+    width: 77vw;
+    height: 200px;
+    left: 357px;
+    background: #D9D9D9;
+    display: flex;
+    justify-content: space-around;
+}
+.users{
+    position: relative;
+    width: 240px;
+    height: 137px;
+    top: 40px;
+  
+    background: #FFFFFF;
+}
+.products{
+    position: relative;
+    width: 240px;
+    height: 137px;
+    top: 40px;
+  
+    background: #FFFFFF;
+}
+.admin-bar{
+    position: absolute;
+
+    left: 39px;
+    top: 60px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+
+
+    color: #10C900;
+}
+
+mat-icon{
+    color: #10C900;
+    font-size: larger;
+}
+.search{
+    color: #FFFFFF;
+}
+button{
+    height: 30px;
+}
+.content2{
+    position: absolute;
+    width: 77vw;
+    top: 370px;
+    height: 260px;
+    left: 359px;
+    /* background: #D9D9D9; */
+
+}
+  
+  
