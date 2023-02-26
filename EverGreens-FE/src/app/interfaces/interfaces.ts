@@ -25,3 +25,12 @@ export interface Product{
     price:string
     category:string
 }
+
+export interface Cart {
+    id:number
+    product: string
+    productId:number
+    userName: string
+    quantity: number
+    price:number
+}
