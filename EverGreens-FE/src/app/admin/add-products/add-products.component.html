@@ -1,0 +1,25 @@
+<div class="content">
+    <div class="left">
+        <img src="https://justcook.butcherbox.com/wp-content/uploads/2020/01/veggie-and-meat-800x450.jpg" alt="">
+    </div>
+    <form [formGroup]="addProduct" (ngSubmit)="AddProduct()">
+    <div class="right">
+      
+        <h3> Add a New Product</h3>
+        <Label>Name</Label>
+        <input type="text" formControlName="name" />
+
+        <Label>Description</Label>
+        <input type="text" formControlName="description" />
+
+        <Label>Image</Label>
+        <input type="text" formControlName="image" />
+
+          <Label>Price</Label>
+        <input type="text" formControlName="price" />
+
+        <button type="submit"> Submit Data</button>
+    
+    </div>
+</form>
+</div>
