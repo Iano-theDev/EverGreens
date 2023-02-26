@@ -1,0 +1,36 @@
+
+
+.category{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    width: 80%;
+    margin: 0 auto;
+}
+.category-items{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+.category-item{
+    width: 200px;
+    height: 200px;
+    border: 1px solid grey;
+    color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(74, 240, 74);
+    border-radius: 10px;
+}
+.category-item a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.category-item mat-icon {
+    font-size: 30px;
+}

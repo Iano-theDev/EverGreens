@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.enticement{
+    display: flex;
+    width: 80%;
+    height: 80%;
+    margin: 30px auto;
+
+}
+
+.enticement .left{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    width: 50%;
+    height: 50%;
+    background-color: rgb(74, 240, 74);
+    color: white;
+    padding: 20px;
+}
+.enticement .left p{
+    font-size: 20px;
+    font-weight: bold;
+}
+.enticement .left button{
+    background-color: white;
+    color: rgb(74, 240, 74);
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+.enticement .left button:hover{
+    background-color: rgb(74, 240, 74);
+    color: white;
+    cursor: pointer;
+}
+
+.enticement .right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    width: 50%;
+    height: 50%;
+}
+
+.enticement .right img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
