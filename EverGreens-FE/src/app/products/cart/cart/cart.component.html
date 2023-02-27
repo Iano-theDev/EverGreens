@@ -11,28 +11,30 @@
       <section class="cart-items">
         <div class="cart-item">
           <img src="https://via.placeholder.com/150x150" alt="Product Image">
-          <div class="cart-item-details">
-            <h2>Product Name</h2>
+          <div class="cart-item-details" *ngFor="let cart of carts">
+            <h2>{{cart.product}}</h2>
             <p>Price: 220 Ksh</p>
             <label for="quantity">Quantity:</label>
             <input type="number" id="quantity" name="quantity" value="1">
             <button class="remove-item">Remove</button>
           </div>
         </div>
-        <div class="cart-item">
+        <!-- <div class="cart-item">
           <img src="https://via.placeholder.com/150x150" alt="Product Image">
           <div class="cart-item-details" *ngFor="let cart of carts">
             <h2>{{cart.product}}</h2>
-            <p>Price: {{cart.price}}Ksh</p>
+            <p>Price: 200Ksh</p>
             <label for="quantity">Quantity:</label>
             <input type="number" id="quantity" name="quantity" value="2">
             <button class="remove-item">Remove</button>
           </div>
-        </div>
+        </div> -->
       </section>
       <section class="cart-total" *ngFor="let cart of carts">
         <h2>Cart Total: {{cart.price}} Ksh</h2>
+        <div *ngIf="">
         <button class="checkout">Checkout</button>
+      </div>
       </section>
     </main>
     

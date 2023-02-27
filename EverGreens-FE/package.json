@@ -10,7 +10,6 @@
   },
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
     "@angular/animations": "^15.2.0",
     "@angular/cdk": "^15.2.0",
     "@angular/common": "^15.1.0",
@@ -27,7 +26,6 @@
     "@material-ui/icons": "^4.11.3",
     "@visurel/iconify-angular": "^11.0.0",
     "rxjs": "~7.8.0",
-=======
     "@angular/animations": "^15.0.0",
     "@angular/cdk": "^15.2.0",
     "@angular/common": "^15.0.0",
@@ -41,7 +39,6 @@
     "angular-font-awesome": "^3.1.2",
     "font-awesome": "^4.7.0",
     "rxjs": "~7.5.0",
->>>>>>> f00b1f0a48736773aaea3a812683b6469a103307
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },

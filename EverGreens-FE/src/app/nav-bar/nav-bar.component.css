@@ -113,3 +113,12 @@ nav .lower a {
 nav .lower a:hover{
     color: rgb(74, 240, 74);
 }
+
+.signups{
+    text-decoration: none;
+    
+}
+
+.signups:hover{
+    color: rgb(74, 240, 74);
+}
