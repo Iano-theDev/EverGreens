@@ -18,7 +18,7 @@
         <div class="cart-person ">
             <a routerLink="/cart">
             
-                <mat-icon class="cart">shopping_cart</mat-icon>
+                <mat-icon class="cart"  >shopping_cart</mat-icon>
             </a>
             <p id="number-of-items">5</p>
             <a routerLink="/login" class="signups">
@@ -33,13 +33,17 @@
         </div>
     </div>
     <div class="lower">
+        <div class="menu" #menu>
+            <button (click)="toggleMenu()">
+                <mat-icon class="menu-icon">menu</mat-icon>
+            </button>
+        </div>
+       <div class="lower-links show" #links>
         <button> shop </button>
         <a routerLink="/products">meat & seafood</a>
         <a routerLink="/products">Drinks</a>
         <a routerLink="/products">Fruits & Vegetables</a>
         <a routerLink="/products">contact us</a>
-
-    
-
+       </div>
     </div>
 </nav>

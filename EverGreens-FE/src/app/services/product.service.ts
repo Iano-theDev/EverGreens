@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product.model';
 
@@ -12,12 +13,13 @@ export class ProductService {
     new Product('3', 'cabbage', 'cabbage from limiru kenya', 10.99, new Date(), '1', '../../../assets/cabbage.jpeg', true, true, false, []),
   ];
 
-  constructor() { }
-
-  getProducts(): Product[] {
-    return this.products;
+  constructor(private http: HttpClient) { 
+    this.products = [];
   }
 
+  getProducts(){
+    return this.http.get('https://ridespark.ml/api/products');
+  }
   getProduct(id: string): Product {
     return this.products.find((p) => p.id === id) as Product;
   }

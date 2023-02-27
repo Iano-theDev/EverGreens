@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="nav">
+        <a href="">
+
+        </a>
+        <a href="">
+
+        </a><a href="">
+
+        </a>
+        <a href="">
+
+        </a>
+    </div>
+
+    <div *ngFor="let product of products" class="product-card">
+        
+        <div class="image-container">
+            <img [src]="product.imgUrl" alt="">
+        </div>
+        <div class="product-name">
+            <a [routerLink]="['/products',product.productId]">
+                <p>{{product.name}}</p>
+            </a>
+            
+        </div>
+        <div class="product-description">
+            <p>{{product.description}}</p>
+        </div>
+        <div class="btn-container">
+            <p>{{product.price | currency : 'Ksh'}}</p>
+            <button>Add to cart</button>
+        </div>
+    </div>
+</div>

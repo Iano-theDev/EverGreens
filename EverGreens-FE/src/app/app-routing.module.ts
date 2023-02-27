@@ -1,23 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
 import { AuthGuard } from './Services/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 
-  // Lazy load the home module
+  
   {
     path: 'home',
     loadChildren: () =>
-      import('./home/home.module').then((m) => m.HomeModule)
+      import('./home/home.module').then((m) => m.HomeModule),
   },
   {path: 'register', 
     loadComponent:() => import('./auth/register/register/register.component').then(m => m.RegisterComponent)},
   {path: 'cart', 
     loadComponent:() => import('./products/cart/cart/cart.component').then(c => c.CartComponent)},
   {path: 'checkout', 
-    loadComponent:() => import('./products/checkout/checkout.component').then(f => f.CheckoutComponent), canActivate:[AuthGuard]},
+    loadComponent:() => import('./products/checkout/checkout.component').then(c => c.CheckoutComponent), canActivate:[AuthGuard]},
   {path: 'login', 
     loadComponent:() => import('./auth/login/login/login.component').then(e => e.LoginComponent)},
   {path: 'admindash', 
@@ -44,7 +43,8 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
+      imports: [RouterModule.forRoot(routes)],
+      exports: [RouterModule]
+    })
+
 export class AppRoutingModule { }

@@ -1,14 +1,14 @@
 
 ### 1. Get all users
-GET  https://ridespark.ml/api/users
+GET  http://localhost:4000/api/users
 
 ### 2. Get a user by id
-GET   https://ridespark.ml/api/users/8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8
+GET   http://localhost:4000/api/users/8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8
 
 
 ### 3. Create a user
 
-POST   https://ridespark.ml/api/users/register
+POST   http://localhost:4000/api/users/register
 Content-Type: application/json
 
 
@@ -22,7 +22,7 @@ Content-Type: application/json
 
 ### 4. Update a user
 
-PUT   https://ridespark.ml/api/users/45d8bf9f-8767-4441-b934-cb7342026cae
+PUT   http://localhost:4000/api/users/45d8bf9f-8767-4441-b934-cb7342026cae
 Content-Type: application/json
 
  {
@@ -39,11 +39,11 @@ Content-Type: application/json
 
 ### 5. Delete a user
 
-DELETE   https://ridespark.ml/api/users/3711d8fc-0fed-49c4-a019-f03c862ecf92
+DELETE   http://localhost:4000/api/users/3711d8fc-0fed-49c4-a019-f03c862ecf92
 
 ### 6. Login a user
 
-POST   https://ridespark.ml/api/users/login
+POST   http://localhost:4000/api/users/login
 Content-Type: application/json
 
 {
@@ -58,20 +58,20 @@ GET   https://ridespark.ml/api/products
 
 
 ### 8. Get a product by id
-GET   https://ridespark.ml/api/products/1
+GET   http://localhost:4000/api/products/1
 
 
 ### 9. Create a product
 
-POST  http://localhost:3002/api/products
+POST  http://localhost:4000/api/products
 Content-Type: application/json
 
 {
-    "name": "Chair",
-    "description":"Best ",
+    "name": "Cabbage",
+    "description":"Cabbage is a cruciferous vegetable and is associated with a reduced risk of many adverse health conditions.",
     "price": 200,
-    "category_id": "3bd5ab2c-e17f-4d35-8f2f-c7d22b4018f3",
-    "product_image_url":"https://media.istockphoto.com/id/1387467858/photo/tray-with-a-cup-of-hot-coffee-with-sweets-and-a-nice-plant-by-the-window-of-the-house-have.jpg?b=1&s=170667a&w=0&k=20&c=xoqkk3XGw-G2rVkRAUjQ2ZLTkNu_Dd9aUJq3mfqP7uc=",
+    "category_id": "5afac669-aa18-4c9d-90c9-265067b10450",
+    "product_image_url":"https://s3.eu-west-1.amazonaws.com/s.keekapu.com/keekapu-web-pics/cabbage-EDB9E2E8-3A3A-43E1-B348-3D07ECF9B6A7.jpg",
     "recently_added":"1",
     "featured":"1",
     "is_deleted":"0"
@@ -80,7 +80,7 @@ Content-Type: application/json
 
 ### 10. Update a product
 
-PUT   https://ridespark.ml/api/products/1
+PUT   http://localhost:4000/api/products/1
 Content-Type: application/json
 
 {
@@ -98,41 +98,41 @@ Content-Type: application/json
 
 ### 11. Delete a product
 
-DELETE   https://ridespark.ml/api/products/72836104-8256-4264-aa67-0c024aaa62d3
+DELETE   http://localhost:4000/api/products/72836104-8256-4264-aa67-0c024aaa62d3
 
 
 ### 12. product by category
 
-GET   https://ridespark.ml/api/products/category/12857889-5b30-46e7-b76c-5547e6166499
+GET   http://localhost:4000/api/products/category/12857889-5b30-46e7-b76c-5547e6166499
 
 
 ### 13. Get product that belong to a top level category
 
-GET   https://ridespark.ml/api/products/category/top/level
+GET   http://localhost:4000/api/products/category/top/level
 
 
 ### 14. Get all categories
 
-GET   https://ridespark.ml/api/categories
+GET   http://localhost:4000/api/categories
 
 ### 15. create a category
 
-POST   https://ridespark.ml/api/categories
+POST   http://localhost:4000/api/categories
 Content-Type: application/json
 
 {
-    "name": "sofa",
+    "name": "Fruits & Vegetables",
     "is_top_level": "1"
 }
 
 ### 16. Get a category by name
 
-GET   https://ridespark.ml/api/categories/name/sofa
+GET   http://localhost:4000/api/categories/name/sofa
 
 
 ### 17. Get a category by id
 
-GET   https://ridespark.ml/api/categories/12857889-5b30-46e7-b76c-5547e6166499
+GET   http://localhost:4000/api/categories/12857889-5b30-46e7-b76c-5547e6166499
 
 
 
@@ -148,7 +148,7 @@ GET   http://localhost:3002/api/cartitems
 
 ### 3. Create a cartItem include token in header
 
-POST   https://ridespark.ml/api/cartitems
+POST   http://localhost:4000/api/cartitems
 Content-Type: application/json
 
 {
@@ -160,7 +160,7 @@ Content-Type: application/json
 
 ### 4. Update a cartItem
 
-PUT   https://ridespark.ml/api/cartitems
+PUT   http://localhost:4000/api/cartitems
 Content-Type: application/json
 
 {
@@ -172,12 +172,12 @@ Content-Type: application/json
 
 ### 5. Delete a cartItem
 
-DELETE   https://ridespark.ml/api/cartitems/7db1ec45-c49b-4c4b-8bc7-e5ca2b301e64
+DELETE   http://localhost:4000/api/cartitems/7db1ec45-c49b-4c4b-8bc7-e5ca2b301e64
 
 
 ### removeOrUpdateQuantity 
 
-put  https://ridespark.ml/api/cartitems/removeOrReduceQuantity/7db1ec45-c49b-4c4b-8bc7-e5ca2b301e64
+put  http://localhost:4000/api/cartitems/removeOrReduceQuantity/7db1ec45-c49b-4c4b-8bc7-e5ca2b301e64
 Content-Type: application/json
 
 {
@@ -190,12 +190,12 @@ Content-Type: application/json
 
 ### 6. Get all orders
 
-GET   https://ridespark.ml/api/orders
+GET   http://localhost:4000/api/orders
 
 
 ### 7. Get an order by id
 
-GET   https://ridespark.ml/api/orders/bbf7cc2d-e741-430f-acea-75dd40319ec5
+GET   http://localhost:4000/api/orders/bbf7cc2d-e741-430f-acea-75dd40319ec5
 
 
 ### 8. Create an order
@@ -214,7 +214,7 @@ Content-Type: application/json
 
 ### 9. Update an order
 
-PUT   https://ridespark.ml/api/orders/a120ac52-2098-4ee8-936e-fbf627bc1fe7
+PUT   http://localhost:4000/api/orders/a120ac52-2098-4ee8-936e-fbf627bc1fe7
 Content-Type: application/json
 
 {
@@ -227,17 +227,17 @@ Content-Type: application/json
 
 ### 10. Delete an order
 
-DELETE   https://ridespark.ml/api/orders/a120ac52-2098-4ee8-936e-fbf627bc1fe7
+DELETE   http://localhost:4000/api/orders/a120ac52-2098-4ee8-936e-fbf627bc1fe7
 
 ### get by user id
 
-GET   https://ridespark.ml/api/orders/user/8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8
+GET   http://localhost:4000/api/orders/user/8fe3f01c-5d55-41ca-93ef-a84dcf27c2f8
 
 
 
 #### create review
 
-POST   https://ridespark.ml/api/reviews
+POST   http://localhost:4000/api/reviews
 Content-Type: application/json
 
 {
@@ -250,12 +250,12 @@ Content-Type: application/json
 
 #### get review by product id
 
-GET   https://ridespark.ml/api/reviews/product/12857889-5b30-46e7-b76c-5547e6166499
+GET   http://localhost:4000/api/reviews/product/12857889-5b30-46e7-b76c-5547e6166499
 
 
 #### update review
 
-PUT   https://ridespark.ml/api/reviews
+PUT   http://localhost:4000/api/reviews
 Content-Type: application/json
 
 {
@@ -269,7 +269,7 @@ Content-Type: application/json
 
 #### delete review
 
-DELETE   https://ridespark.ml/api/reviews/6ab4a8cf-890d-4fda-bef1-be399885cf5a
+DELETE   http://localhost:4000/api/reviews/6ab4a8cf-890d-4fda-bef1-be399885cf5a
 
 
 
@@ -277,18 +277,18 @@ DELETE   https://ridespark.ml/api/reviews/6ab4a8cf-890d-4fda-bef1-be399885cf5a
 
 #### get all payment methods
 
-GET   https://ridespark.ml/api/paymentmethods
+GET   http://localhost:4000/api/paymentmethods
 
 
 #### get payment method by id
 
-GET   https://ridespark.ml/api/paymentmethods/12857889-5b30-46e7-b76c-5547e6166499
+GET   http://localhost:4000/api/paymentmethods/12857889-5b30-46e7-b76c-5547e6166499
 
 
 
 #### create payment method
 
-POST   https://ridespark.ml/api/paymentmethods
+POST   http://localhost:4000/api/paymentmethods
 Content-Type: application/json
 
 {
@@ -300,7 +300,7 @@ Content-Type: application/json
 
 #### update payment method
 
-PUT   https://ridespark.ml/api/paymentmethods
+PUT   http://localhost:4000/api/paymentmethods
 Content-Type: application/json
 
 {
@@ -313,14 +313,14 @@ Content-Type: application/json
 
 #### get payment method by id
 
-GET   https://ridespark.ml/api/paymentmethods/12857889-5b30-46e7-b76c-5547e6166499
+GET   http://localhost:4000/api/paymentmethods/12857889-5b30-46e7-b76c-5547e6166499
 
 
 ### patymeent api
 
 #### create payment
 
-POST   https://ridespark.ml/api/payments
+POST   http://localhost:4000/api/payments
 Content-Type: application/json
 
 {
@@ -333,7 +333,7 @@ Content-Type: application/json
 
 #### update payment
 
-PUT   https://ridespark.ml/api/payments
+PUT   http://localhost:4000/api/payments
 Content-Type: application/json
 
 {
@@ -349,7 +349,7 @@ Content-Type: application/json
 
 #### create order item
 
-POST   https://ridespark.ml/api/orderitems
+POST   http://localhost:4000/api/orderitems
 Content-Type: application/json
 
 {
@@ -361,7 +361,7 @@ Content-Type: application/json
 ### update order item
 
 
-PUT   https://ridespark.ml/api/orderitems/12857889-5b30-46e7-b76c-5547e6166499
+PUT   http://localhost:4000/api/orderitems/12857889-5b30-46e7-b76c-5547e6166499
 Content-Type: application/json
 
 {
@@ -374,4 +374,4 @@ Content-Type: application/json
 
 #### get order item by id
 
-GET   https://ridespark.ml/api/orderitems/12857889-5b30-46e7-b76c-5547e6166499
+GET   http://localhost:4000/api/orderitems/12857889-5b30-46e7-b76c-5547e6166499

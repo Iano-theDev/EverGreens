@@ -11,7 +11,9 @@ export class PopularPicksComponent {
   popularPicks= []
 
   constructor(private productService: ProductService) { 
-    this.popularPicks =this.productService.getProducts() as any;
+    this.productService.getProducts().subscribe((data: any) => {
+      this.popularPicks = data;
+    })
   }
 
 }
