@@ -1,0 +1,39 @@
+
+footer{
+
+background-color: rgb(74, 240, 74);
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 20px 0;
+color: white;
+
+
+}
+
+footer .brand-name{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+footer .brand-name a{
+    color: white;
+    text-decoration: none;
+}
+
+footer .social{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+footer .social a{
+    margin: 0 10px;
+}
+
+footer .copyright p{
+    font-size: 12px;
+}

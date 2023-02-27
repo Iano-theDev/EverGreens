@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:   sans-serif;
+  }
+
+  .container{
+    width: 100vw;
+    height: 100vh;
+    
+    justify-content: space-around;
+    
+} 
+.form-input{
+    width:75%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid rgb(136, 0, 255); */
+    margin: auto;
+    gap: 20px;
+    flex-wrap: wrap;
+    
+}
+
+.form-group{
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+    
+    
+}
+form{
+    margin-bottom: 20vh;
+    width: 30vw;
+    /* text-align: center; */
+}
+
+input{
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    
+}
+
+button{
+    background-color: #15CF3E;
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-left: 5vw;
+    padding: 5px 15px;
+    border: none;
+    color: aliceblue;
+    width: 30%;
+}
+
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+.text-danger{
+    color: red;
+    /* border-color: red; */
+}
+
+label{
+    font-weight: bold;
+}
+
+h2{
+    margin-bottom: 5px;
+    color: #15CF3E;
+}

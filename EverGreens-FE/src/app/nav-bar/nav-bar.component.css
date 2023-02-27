@@ -1,0 +1,115 @@
+
+nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 95%;
+    padding: 0 20px;
+    margin: 0 auto;
+ 
+}
+
+nav .upper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+   
+}
+nav .upper .brand-name{
+    font-size: 30px;
+    font-weight: bold;
+}
+nav .upper .brand-name a{
+    color: green;
+    text-decoration: none;
+}
+
+nav .upper .search-bar .search{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: 1px solid black;
+    height: 30px;
+    border-radius: 20px;
+    padding: 0 10px;
+   
+}
+
+nav .upper .search-bar .search input{
+    border: none;
+    outline: none;
+}
+
+nav .upper .search-bar .search button{
+    border: none;
+    background-color: white;
+   
+}
+
+nav .upper  .cart-person{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+nav .upper  .cart-person #number-of-items{
+    background-color: rgb(74, 240, 74);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    margin: 0 10px;
+    position: relative;
+    top: -10px;
+    left: -10px;
+}
+
+nav .upper  .cart-person a{
+    margin: 0 10px;
+}
+
+.fa fa-shopping-cart{
+    font-size: 20px;
+    color: black;
+}
+
+nav .lower{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+}
+
+nav .lower button{
+    background-color: rgb(74, 240, 74);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+}
+nav button:hover{
+    cursor: pointer;
+}
+
+nav .lower a {
+    color: black;
+    text-decoration: none;
+    
+}
+
+nav .lower a:hover{
+    color: rgb(74, 240, 74);
+}
