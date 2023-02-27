@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { AllProductsComponent } from "./products/all-products/all-products.component";
 import { RouterModule } from '@angular/router';
 import { SingleProductComponent } from './products/single-product/single-product.component';
@@ -23,6 +24,8 @@ import { SingleProductComponent } from './products/single-product/single-product
         SingleProductComponent
     ]
 =======
+=======
+>>>>>>> 7e34716946164381b9354b78b5580f91aaa22038
 import { ReactiveFormsModule } from '@angular/forms';
 
 

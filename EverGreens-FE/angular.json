@@ -25,16 +25,9 @@
               "src/assets"
             ],
             "styles": [
-<<<<<<< HEAD
-              
-                
-              
-              
-=======
               "src/custom-theme.scss",
               "src/styles.css",
               "./node_modules/font-awesome/css/font-awesome.css"
->>>>>>> f00b1f0a48736773aaea3a812683b6469a103307
             ],
             "scripts": []
           },
@@ -104,12 +97,5 @@
         }
       }
     }
-  },
-  "cli": {
-<<<<<<< HEAD
-    "analytics": false
-=======
-    "analytics": "12a6e9dc-9b5d-4ae6-a1c1-975b6fb7e5f7"
->>>>>>> 7e34716946164381b9354b78b5580f91aaa22038
   }
 }
