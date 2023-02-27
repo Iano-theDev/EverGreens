@@ -27,3 +27,23 @@
 }
 
 
+
+
+@media screen and (min-width: 768px){
+    .hero{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "big-hero"
+        "small-hero";
+    }
+}
+
+@media screen and (max-width: 480px){
+    .hero{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "big-hero"
+        "small-hero";
+    }
+    
+}
