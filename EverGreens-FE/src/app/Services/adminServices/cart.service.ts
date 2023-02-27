@@ -7,7 +7,12 @@ import { Product,Cart } from 'src/app/interfaces/interfaces';
 export class CartService {
 
   constructor() { }
-  items:Cart[] = [];
+  items:Cart[] = [{id:Math.floor(Math.random() *10000),
+    product: 'p.name',
+    productId:234,
+    userName: 'wahome',
+    quantity: 1,
+    price:220}];
   
   quantity!: number
 
