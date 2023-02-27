@@ -38,7 +38,7 @@
 
 
 
-@media screen and (min-width: 768px){
+@media screen and (max-width: 768px){
     .category{
         width: 100%;
         padding: 0 0 50px 0;
