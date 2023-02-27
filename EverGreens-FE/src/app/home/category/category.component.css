@@ -3,6 +3,7 @@
 .category{
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: center;
     gap: 10px;
@@ -34,3 +35,25 @@
 .category-item mat-icon {
     font-size: 30px;
 }
+
+
+
+@media screen and (max-width: 768px){
+    .category-items{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+
+@media screen and (max-width: 425px){
+    .category-item{
+        width: 150px;
+        height: 150px;
+    }
+}
+
+
+
+    
