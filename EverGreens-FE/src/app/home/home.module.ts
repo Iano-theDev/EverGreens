@@ -35,6 +35,8 @@ const routes :Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     MatIconModule,
+    HttpClientModule,
+    MatIconModule,
     HttpClientModule
   ]
 })
