@@ -58,3 +58,37 @@
     height: 100%;
     object-fit: cover;
 }
+
+
+@media screen and (max-width: 768px){
+    .enticement{
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    .enticement .left{
+        width: 100%;
+        height: 50%;
+    }
+    .enticement .right{
+        width: 100%;
+        height: 50%;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .enticement{
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+    .enticement .left{
+        width: 100%;
+        height: 50%;
+    }
+    .enticement .right{
+        width: 100%;
+        height: 50%;
+    }
+    
+}

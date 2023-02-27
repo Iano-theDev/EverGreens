@@ -12,26 +12,28 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FooterComponent } from './footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        AppComponent,
+  declarations: [
+    AppComponent,
+    AppComponent,
     NavBarComponent,
     FooterComponent
-    ],
-    providers: [],
-    bootstrap: [AppComponent],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        AllProductsComponent,
-        RouterModule,
-        SingleProductComponent,
-        ReactiveFormsModule,
-        MatIconModule
-        
-       
-    ],
-  })
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    AllProductsComponent,
+    RouterModule,
+    SingleProductComponent,
+    ReactiveFormsModule,
+    MatIconModule,
+    HttpClientModule
+
+
+  ],
+})
 export class AppModule { }

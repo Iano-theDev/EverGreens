@@ -11,6 +11,38 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 20px;
     margin: 0 auto;
     padding: 0 0 50px 0;
+}
+
+
+@media screen and (max-width: 768px){
+    .popular{
+        width: 100%;
+        padding: 0 0 50px 0;
+        text-align: center;
+    }
+   
+}
+
+@media screen and (max-width: 480px){
+    .popular{
+        width: 100%;
+        padding: 0 0 50px 0;
+        text-align: center;
+    }
+    .popular .popular-picks{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin: 0 auto;
+        padding: 0 0 50px 0;
+
+    }
+
+ 
+    
 }

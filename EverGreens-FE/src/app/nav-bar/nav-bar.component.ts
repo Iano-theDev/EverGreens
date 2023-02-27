@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,5 +6,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent {
+  isOpen = false;
+
+  @ViewChild('menu') menu: any;
+  @ViewChild('links') links: any;
+
+  constructor() { }
+
+  toggleMenu() {
+    if (this.isOpen) {
+      
+    this.links.nativeElement.style.display = 'none';
+    this.isOpen = false;
+    }else {
+      this.links.nativeElement.style.display = 'flex';
+      this.isOpen = true;
+    }
+    
+  }
 
 }

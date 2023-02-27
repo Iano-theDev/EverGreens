@@ -1,5 +1,3 @@
-
-
 <div class="popular">
     <h1>Popular picks</h1>
     <p>Check out our most popular products</p>
@@ -7,4 +5,10 @@
     <div class="popular-picks">
         <app-single-popular *ngFor="let popular of popularPicks" [popular]="popular"></app-single-popular>
     </div>
+
+    <!-- show no product if no -->
+    <!-- <div *ngIf="popularPicks.length == 0">
+        <p>No products to show</p>
+
+    </div> -->
 </div>
