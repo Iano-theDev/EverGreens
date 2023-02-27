@@ -6,6 +6,14 @@ import { SingleProductComponent } from './products/single-product/single-product
 import { RegisterComponent } from './auth/register/register/register.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+
+  // Lazy load the home module
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('./home/home.module').then((m) => m.HomeModule),
+  },
   { path: 'products', component: AllProductsComponent },
   { path: 'products/:id', component: SingleProductComponent },
 
@@ -41,14 +49,7 @@ const routes: Routes = [
         path: 'addproducts',
         loadComponent: () => import('./admin/add-products/add-products.component').then(d => d.AddProductsComponent),
       },
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-
-      // Lazy load the home module
-      {
-        path: 'home',
-        loadChildren: () =>
-          import('./home/home.module').then((m) => m.HomeModule),
-      },
+     
     ]
   }
 

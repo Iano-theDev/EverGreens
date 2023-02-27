@@ -4,15 +4,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 import { AllProductsComponent } from "./products/all-products/all-products.component";
 import { RouterModule } from '@angular/router';
 import { SingleProductComponent } from './products/single-product/single-product.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { MatIconModule } from '@angular/material/icon';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
     declarations: [
         AppComponent,
+        AppComponent,
+    NavBarComponent,
+    FooterComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -21,38 +27,11 @@ import { SingleProductComponent } from './products/single-product/single-product
         AppRoutingModule,
         AllProductsComponent,
         RouterModule,
-        SingleProductComponent
-    ]
-=======
-=======
->>>>>>> 7e34716946164381b9354b78b5580f91aaa22038
-import { ReactiveFormsModule } from '@angular/forms';
-
-
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FooterComponent } from './footer/footer.component';
-
-import { MatIconModule } from '@angular/material/icon';
-
-@NgModule({
-  declarations: [
-    AppComponent,
-    NavBarComponent,
-    FooterComponent,
-    
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    MatIconModule
-  
-    
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
->>>>>>> 7e34716946164381b9354b78b5580f91aaa22038
-})
+        SingleProductComponent,
+        ReactiveFormsModule,
+        MatIconModule
+        
+       
+    ],
+  })
 export class AppModule { }
