@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UsersService } from 'src/app/Services/adminServices/users.service';
+
 import { Users } from 'src/app/interfaces/interfaces';
 
 @Component({
@@ -12,10 +12,10 @@ import { Users } from 'src/app/interfaces/interfaces';
 })
 export class ViewUsersComponent implements OnInit { 
   users!: Users[]
-  constructor(private usersService:UsersService){ }
+  constructor(){ }
 
   ngOnInit(): void {
-    this.users = this.usersService.getUsers()
+    
   }
   
   

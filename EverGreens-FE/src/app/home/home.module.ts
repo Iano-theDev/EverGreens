@@ -9,6 +9,7 @@ import { PopularPicksComponent } from './popular-picks/popular-picks.component';
 import { SinglePopularComponent } from './single-popular/single-popular.component';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+import { SpinnerComponent } from "../shared/spinner/spinner.component";
 
 
 const routes :Routes = [
@@ -21,23 +22,22 @@ const routes :Routes = [
 
 
 @NgModule({
-  declarations: [
-    HeroComponent,
-    HomePageComponent,
-    CategoryComponent,
-    EnticementComponent,
-    PopularPicksComponent,
-    SinglePopularComponent,
-    
-    
-  ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    MatIconModule,
-    HttpClientModule,
-    MatIconModule,
-    HttpClientModule
-  ]
+    declarations: [
+        HeroComponent,
+        HomePageComponent,
+        CategoryComponent,
+        EnticementComponent,
+        PopularPicksComponent,
+        SinglePopularComponent,
+    ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        MatIconModule,
+        HttpClientModule,
+        MatIconModule,
+        HttpClientModule,
+        SpinnerComponent
+    ]
 })
 export class HomeModule { }

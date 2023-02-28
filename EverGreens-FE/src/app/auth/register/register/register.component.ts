@@ -1,65 +1,56 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormGroup,FormBuilder, Validators, FormControl, AbstractControl } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { FormGroup, FormBuilder, Validators, FormControl, AbstractControl } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [CommonModule,RouterModule,ReactiveFormsModule],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  registerForm!:FormGroup
+  registerForm!: FormGroup
   title = 'angularvalidate';
-  submitted=false;
+  submitted = false;
   passwordUnmatch = false;
-  
-  
-  constructor(private formBuilder:FormBuilder){
-    
-  }
 
-  ngOnInit(){
-    
+
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) { }
+  ngOnInit() {
+
     this.registerForm = this.formBuilder.group({
-      
-      firstName:['',[Validators.required,Validators.minLength(4)]],
-      // lastName:['',Validators.required],
-      email:['',[Validators.required,Validators.email]],
-      password:['',[Validators.required,Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')  ]],
-      conPassword:['',[Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')  ], [this.confirmPass.bind(this)]],
-      
-      
-      
+
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
+
+
+
     })
 
 
   }
- 
 
-  onSubmit(){
-     this.submitted = true
-     let password =this.registerForm.controls['password'].value;
-    //  alert('Registered Sucessfully')
-    console.log(this.registerForm);
-    
+
+  onSubmit() {
+    console.log(this.registerForm.value);
+
+    this.submitted = true;
+    if (this.registerForm.invalid) {
+      return;
+    }
+    this.authService.register(this.registerForm.value.email, this.registerForm.value.password, this.registerForm.value.phone);
+
+
+
+
+
+
   }
 
 
-  confirmPass(control:AbstractControl):Promise<{[s:string]:boolean} |null>{
-  
-   const prom = new Promise<{[s:string]:boolean} |null>((resolve,reject)=>{
-    if(control.value !==this.registerForm.value.password){
-      resolve( {passwordUnmatch:true})
-  }else{
-    resolve (null)
-  }
-      
-   })
-
-   return prom;
-  }
 }

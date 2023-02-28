@@ -1,76 +1,67 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family:   sans-serif;
-  }
-
-  .container{
-    width: 100vw;
-    height: 100vh;
-    
-    justify-content: space-around;
-    
-} 
-.form-input{
-    width:75%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* border: 2px solid rgb(136, 0, 255); */
-    margin: auto;
-    gap: 20px;
-    flex-wrap: wrap;
-    
-}
 
 .form-group{
-    gap: 10px;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #ccc;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-   
+    justify-content: space-around;
+
     
-    
-}
-form{
-    margin-bottom: 20vh;
-    width: 30vw;
 }
 
-input{
-    padding: 10px;
-    border-radius: 10px;
+.form-group form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 100%;
+    
+    
+    
+}
+
+.form-group form .input-control{
     width: 100%;
-    
+    margin: 10px 0;
 }
 
-button{
-    background-color: #15CF3E;
-    border-radius: 50px;
-    margin-top: 10px;
-    margin-left: 5vw;
-    padding: 5px 15px;
-    border: none;
-    color: aliceblue;
-    width: 30%;
+.form-group from .input-control label{
+    display: block;
+    width: 75px;
 }
 
-input.ng-invalid.ng-touched{
-    border: 1px solid red;
+.form-group form .input-control input{
+    width: 100%;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
 }
 
-.text-danger{
-    color: red;
-    /* border-color: red; */
+.form-group form .input-control input:focus{
+    outline: none;
+    border: 1px solid #000;
 }
 
-label{
-    font-weight: bold;
+.form-group form  button{
+    width: 100px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: rgb(74, 240, 74);
+    color: #000;
+    cursor: pointer;
 }
 
-h2{
-    margin-bottom: 5px;
-    color: #15CF3E;
+.form-group form button:hover{
+    background: rgb(0, 255, 0);
+    color: #fff;
 }
+
+

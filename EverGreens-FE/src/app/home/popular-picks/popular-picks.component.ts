@@ -7,12 +7,14 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./popular-picks.component.css']
 })
 export class PopularPicksComponent {
+  isLoading = true;
   
   popularPicks= []
 
   constructor(private productService: ProductService) { 
     this.productService.getProducts().subscribe((data: any) => {
-      this.popularPicks = data;
+      this.popularPicks = data.slice(0,3);
+      this.isLoading = false;
     })
   }
 

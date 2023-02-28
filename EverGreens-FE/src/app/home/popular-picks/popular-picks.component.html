@@ -1,4 +1,8 @@
-<div class="popular">
+<div *ngIf=" isLoading" class="spinner">
+    <app-spinner></app-spinner>
+</div>
+
+<div class="popular" *ngIf="!isLoading">
     <h1>Popular picks</h1>
     <p>Check out our most popular products</p>
 
@@ -11,4 +15,5 @@
         <p>No products to show</p>
 
     </div> -->
+    
 </div>

@@ -7,7 +7,7 @@
         <p>{{popular.description}}</p>
         <div class="product-info-price">
             <span class="price">{{popular.price | currency:'ksh':'symbol':'1.2-2'}}</span>
-            <button>Add to cart</button>
+            <button (click)="addToCart(popular)">Add to cart</button>
         </div>
     </div>
 

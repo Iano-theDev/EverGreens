@@ -1,115 +1,147 @@
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-  }
-  
-  
-  header {
-    background-color: #EEEEEE;
-    color: #fff;
-    padding: 20px;
-  }
-  
-  
-  nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  h2{
-    color: #737373;
-  }
 
-  
-  /* header {
-    background-color: #f7f7f7;
-    padding: 20px;
-    text-align: center;
-  } */
-  
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .cart-items {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    max-width: 800px;
-  }
-  
-  .cart-item {
-    display: flex;
-    gap: 20px;
-    /* border: 1px solid #ccc; */
-    border-radius: 5px;
-    padding: 10px;
-  }
-  
-  .cart-item img {
-    max-width: 150px;
-  }
-  
-  .cart-item-details {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    
-  }
-  
-  .cart-item-details h2,
-  .cart-item-details p {
-    margin: 0;
-    color: #555555;
-  }
-  
-  .cart-item-details input {
-    width: 50px;
-  }
-  
-  .cart-total {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  .cart-total h2 {
-    margin-bottom: 10px;
-  }
-  
-  .checkout {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #15CF3E;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .checkout:hover {
-    background-color: #00ff62;
-  }
-
-  .remove-item{
-    background-color: #15CF3E;
-    border-radius: 50px;
-    margin-top: 10px;
-    /* margin-left: 5vw; */
-    padding: 5px 15px;
-    border: none;
-    color: aliceblue;
-    width: 50%;
-  }
-  
-  
-  
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
  
+}
+.cart-items .total{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  margin: auto;
+}
+.cart-items .cart-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 50%;
+  height: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-items .cart-item .cart-item-image {
+  width: 30%;
+  height: 100%;
+}
+
+.cart-items .cart-item .cart-item-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.cart-items .cart-item .cart-item-info {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.cart-items .cart-item .actions {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-items .cart-item .actions button {
+  width: 100%;
+  height: 30px;
+  margin: 5px;
+  background-color: rgb(74, 240, 74);
+}
+
+.cart-items .cart-item .actions button:hover {
+  cursor: pointer;
+}
+
+.cart-items .cart-item .actions .quantity {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80vh;
+}
+
+.checkout {
+  display: flex;
+  align-items: center;
+  justify-content:flex-end;
+  width: 50%;
+  margin: auto;
+}
+
+.checkout button {
+  width: 100px;
+  height: 50px;
+  background-color: rgb(74, 240, 74);
+}
+
+.items{
+  width: 100%;
+}
+
+
+@media screen and (max-width: 768px) {
+  .cart-items .cart-item {
+    width: 100%;
+  }
+  .cart-items .cart-item .cart-item-image {
+    width: 20%;
+  }
+  .cart-items .cart-item .cart-item-info {
+    width: 60%;
+  }
+  .cart-items .cart-item .actions {
+    width: 20%;
+  }
+  .cart-items .total {
+    width: 100%;
+  }
+  .checkout {
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .cart-items .cart-item {
+    width: 100%;
+  }
+  .cart-items .cart-item .cart-item-image {
+    width: 20%;
+  }
+  .cart-items .cart-item .cart-item-info {
+    width: 60%;
+  }
+  .cart-items .cart-item .actions {
+    width: 20%;
+  }
+  .cart-items .total {
+    width: 100%;
+  }
+  .checkout {
+    width: 100%;
+  }
+  
+}

@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="nav">
         <a href="">
 
@@ -32,4 +32,17 @@
             <button>Add to cart</button>
         </div>
     </div>
+</div> -->
+
+<div *ngIf=" isLoading" class="spinner">
+    <app-spinner></app-spinner>
+</div>
+
+
+<div class="products" *ngIf="!isLoading">
+    <h2>All products</h2>
+    <div class="all-products">
+        <app-one-product *ngFor="let product of products" [product]="product"></app-one-product>
+    </div>
+    
 </div>

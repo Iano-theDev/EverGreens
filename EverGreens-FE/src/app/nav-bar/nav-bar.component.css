@@ -8,6 +8,8 @@ nav{
     width: 95%;
     padding: 0 20px;
     margin: 0 auto;
+    
+    
  
 }
 
@@ -62,7 +64,7 @@ nav .upper  .cart-person{
 }
 nav .upper  .cart-person #number-of-items{
     background-color: rgb(74, 240, 74);
-    color: white;
+    color: black;
     border-radius: 50%;
     width: 20px;
     height: 20px;
@@ -179,7 +181,9 @@ nav .lower .lower-links a:hover{
 
     }
     nav .lower .lower-links button{
-        display: none;
+        background-color: none;
+        color: black;
+        border: none;
     }
     nav .lower .lower-links a:hover{
         color: rgb(74, 240, 74);
@@ -229,7 +233,10 @@ nav .lower .lower-links a:hover{
 
     }
     nav .lower .lower-links button{
-        display: none;
+        background-color: white;
+        color: black;
+        border: none;
+
     }
     nav .lower .lower-links a:hover{
         color: rgb(74, 240, 74);

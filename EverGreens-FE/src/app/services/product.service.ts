@@ -7,11 +7,7 @@ import { Product } from '../models/product.model';
 })
 export class ProductService {
 
-  products: Product[] = [
-    new Product('1', 'chinese cabbage', 'cabbage from china', 10.99, new Date(), '1', '../../../assets/chinese-cabbage.jpeg', true, true, false, []),
-    new Product('2', 'Pepper', 'pepper from nakuru', 10.99, new Date(), '1', '../../../assets/pepper.jpeg', true, true, false, []),
-    new Product('3', 'cabbage', 'cabbage from limiru kenya', 10.99, new Date(), '1', '../../../assets/cabbage.jpeg', true, true, false, []),
-  ];
+  products: Product[] = []
 
   constructor(private http: HttpClient) { 
     this.products = [];
