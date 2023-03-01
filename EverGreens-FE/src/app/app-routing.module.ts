@@ -23,9 +23,7 @@ const routes: Routes = [
   {path: 'admindash', 
     loadComponent:() => import('./admin/dashboard/dashboard.component').then(f => f.DashboardComponent),
     children: [
-      {path: 'orders', 
-      loadComponent:() => import('./admin/administrator/administrator.component').then(f => f.AdministratorComponent)  
-    },
+      
       {path: 'users', 
       loadComponent:() => import('./admin/view-users/view-users.component').then(d => d.ViewUsersComponent)  
     },
@@ -34,6 +32,9 @@ const routes: Routes = [
     },
       {path: 'addproducts', 
       loadComponent:() => import('./admin/add-products/add-products.component').then(d => d.AddProductsComponent),  
+    },
+      {path: 'orders', 
+      loadComponent:() => import('./admin/view-orders/view-orders.component').then(d => d.ViewOrdersComponent),  
     },
     ]
   },
