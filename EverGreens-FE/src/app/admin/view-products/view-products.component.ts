@@ -11,7 +11,7 @@ import { Product } from 'src/app/interfaces/interfaces';
   styleUrls: ['./view-products.component.css']
 })
 export class ViewProductsComponent implements OnInit{
-  products: Product[]=[]
+  products: Product[]=[];
 
   constructor ( ){ }
   

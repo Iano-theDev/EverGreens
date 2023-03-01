@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Users } from 'src/app/interfaces/interfaces';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-view-users',

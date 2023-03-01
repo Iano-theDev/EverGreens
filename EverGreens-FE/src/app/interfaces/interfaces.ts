@@ -34,3 +34,8 @@ export interface Cart {
     quantity: number
     price:number
 }
+
+export interface Message{
+    message: string
+}
+
