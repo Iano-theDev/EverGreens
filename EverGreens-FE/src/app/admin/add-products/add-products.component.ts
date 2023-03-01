@@ -2,7 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { AddProductsService } from 'src/app/Services/adminServices/add-products.service';
+
 import { AddProducts,Product } from 'src/app/interfaces/interfaces';
 
 @Component({
@@ -15,7 +15,7 @@ import { AddProducts,Product } from 'src/app/interfaces/interfaces';
 export class AddProductsComponent implements OnInit{
   
 
-  constructor(private fb: FormBuilder, private ProductsService:AddProductsService){}
+  constructor(private fb: FormBuilder){}
   
   addProduct!:FormGroup
   
@@ -31,11 +31,7 @@ export class AddProductsComponent implements OnInit{
 
   AddProduct(){
      const newProduct:Product = {...this.addProduct.value, id:Math.floor(Math.random() *10000)}
-     this.ProductsService.addProduct(newProduct).subscribe(response =>{
-      console.log(response)
-     })
-    //  console.log(newProduct);
-     
+   
   }
 
 }

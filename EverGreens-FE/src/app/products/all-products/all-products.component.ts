@@ -1,23 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductsServiceService } from 'src/app/Services/products-service.service';
-import { Product } from 'src/app/interfaces';
+
+import { Product } from '../../models/product.model';
 import { RouterModule } from '@angular/router';
+import { SingleProductComponent } from "../single-product/single-product.component";
+import { SinglePopularComponent } from 'src/app/home/single-popular/single-popular.component';
+import { OneProductComponent } from "../one-product/one-product.component";
+import { ProductService } from 'src/app/services/product.service';
+import { SpinnerComponent } from "../../shared/spinner/spinner.component";
 
 @Component({
-  selector: 'app-all-products',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
-  templateUrl: './all-products.component.html',
-  styleUrls: ['./all-products.component.css']
+    selector: 'app-all-products',
+    standalone: true,
+    templateUrl: './all-products.component.html',
+    styleUrls: ['./all-products.component.css'],
+    imports: [CommonModule, RouterModule, SingleProductComponent, OneProductComponent, SpinnerComponent]
 })
 export class AllProductsComponent implements OnInit{
 
-  products: Product[] = [];
+  isLoading = true;
 
-  constructor(private productsService:ProductsServiceService){}
+  products:any = [];
+
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-      this.products = this.productsService.getProducts();
+    this.productService.getProducts().subscribe((products) => {
+      this.products = products;
+      this.isLoading= false
+    });
   }
 }

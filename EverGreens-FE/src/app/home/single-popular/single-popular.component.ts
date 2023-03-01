@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { AuthService } from 'src/app/Services/auth.service';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Product } from 'src/app/models/product.model';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-single-popular',
@@ -7,17 +8,18 @@ import { AuthService } from 'src/app/Services/auth.service';
   styleUrls: ['./single-popular.component.css']
 })
 export class SinglePopularComponent {
+  @Output() cartItemsAdded = new EventEmitter<Product>();
 
   @Input() popular: any;
 
-  constructor(public authService:AuthService) { }
+  constructor(private cartService: CartService) { }
 
-  login() {
-    this.authService.login();
-  }
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
+    this.cartItemsAdded.emit(product);
 
-  logout() {
-    this.authService.logout();
+    console.log(this.cartService.getCartItems());
+    
   }
 
 }

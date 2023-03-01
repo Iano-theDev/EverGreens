@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {  HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +14,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { MatIconModule } from '@angular/material/icon';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,13 @@ import { HttpClientModule } from '@angular/common/http';
     NavBarComponent,
     FooterComponent
   ],
-  providers: [],
+
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass :TokenInterceptorService, multi: true
+    }
+
+  ],
   bootstrap: [AppComponent],
   imports: [
     BrowserModule,
