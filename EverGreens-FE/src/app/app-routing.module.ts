@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './Services/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -15,8 +14,10 @@ const routes: Routes = [
     loadComponent:() => import('./auth/register/register/register.component').then(m => m.RegisterComponent)},
   {path: 'cart', 
     loadComponent:() => import('./products/cart/cart/cart.component').then(c => c.CartComponent)},
+    {path: 'products', 
+    loadComponent:() => import('./products/all-products/all-products.component').then(c => c.AllProductsComponent)},
   {path: 'checkout', 
-    loadComponent:() => import('./products/checkout/checkout.component').then(c => c.CheckoutComponent), canActivate:[AuthGuard]},
+    loadComponent:() => import('./products/checkout/checkout.component').then(c => c.CheckoutComponent)},
   {path: 'login', 
     loadComponent:() => import('./auth/login/login/login.component').then(e => e.LoginComponent)},
   {path: 'admindash', 

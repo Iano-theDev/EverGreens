@@ -1,46 +1,43 @@
-<div class="container">
-    <header>
-        <nav>
-          <h2>Your Cart</h2>
-        </nav>
-      </header>
-      
-      <!DOCTYPE html>
-<html>
-    <main>
-      <section class="cart-items">
-        <div class="cart-item">
-          <img src="https://via.placeholder.com/150x150" alt="Product Image">
-          <div class="cart-item-details" *ngFor="let cart of carts">
-            <h2>{{cart.product}}</h2>
-            <p>Price: 220 Ksh</p>
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" value="1">
-            <button class="remove-item">Remove</button>
-          </div>
-        </div>
-        <!-- <div class="cart-item">
-          <img src="https://via.placeholder.com/150x150" alt="Product Image">
-          <div class="cart-item-details" *ngFor="let cart of carts">
-            <h2>{{cart.product}}</h2>
-            <p>Price: 200Ksh</p>
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" value="2">
-            <button class="remove-item">Remove</button>
-          </div>
-        </div> -->
-      </section>
-      <section class="cart-total" *ngFor="let cart of carts">
-        <h2>Cart Total: {{cart.price}} Ksh</h2>
-        <div *ngIf="">
-        <button class="checkout">Checkout</button>
-      </div>
-      </section>
-    </main>
-    
-  
-</html>
 
-      
-  
-  </div>
+<div class="spinner" *ngIf="isLoading">
+    <app-spinner ></app-spinner>
+</div>
+
+<div class="cart-items" *ngIf="!isLoading">
+    <div *ngIf="cartItems.length == 0 else cart" class="empty-cart">
+        <h3>Your cart is empty</h3>
+        <p>Looks like you haven't added anything to your cart yet</p>
+        <a routerLink="/products">Start shopping</a>
+
+    </div>
+    <ng-template #cart>
+      <div class="cart-item" *ngFor="let item of cartItems" #cartItems>
+        <div class="cart-item-image">
+            <img src="{{item.product.product_image_url}}" alt="product image">
+        </div>
+        <div class="cart-item-info">
+            <h3>{{item.product.name}}</h3>
+            <!-- <p>{{item.product.description}}</p> -->
+            <div class="cart-item-info-price">
+                <span class="price">{{item.product.price | currency:'ksh':'symbol':'1.2-2'}}</span>
+            </div>
+        </div>
+        <div class="actions">
+            <button (click)=" removeCartItem(item)">Remove</button>
+            <div class="quantity">
+                <button (click)="decreaseQuantity(item)">-</button>
+                <span>{{item.quantity}}</span>
+                <button (click)="increaseQuantity(item)">+</button>
+            </div>
+        </div>
+    </div>
+    </ng-template>
+
+    <div class="total" *ngIf="cartItems.length > 0">
+        <span>Total  </span>
+        <span>{{cartTotal | currency:'ksh':'symbol':'1.2-2'}}</span>
+    </div>
+    <div class="checkout" *ngIf="cartItems.length > 0">
+        <button (click)="checkout()">Checkout</button>
+    </div>
+</div>

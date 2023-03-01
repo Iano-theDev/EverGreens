@@ -36,7 +36,7 @@ export const createOrderItem: RequestHandler = async (req: Request, res: Respons
 
     } catch (error) {
 
-        res.status(500).send("Error creating order item");
+        res.status(500).send("Error creating order item because of " + error);
 
         
         

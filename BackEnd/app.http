@@ -14,7 +14,7 @@ Content-Type: application/json
 
 
 {
-    "email": "summertech1024@gmail.com",
+    "email": "onesmuswambugu135@gmail.com",
     "password": "123456",
     "phone":"0710383551"
 }
@@ -22,19 +22,20 @@ Content-Type: application/json
 
 ### 4. Update a user
 
-PUT   http://localhost:4000/api/users/45d8bf9f-8767-4441-b934-cb7342026cae
+PUT   http://localhost:4000/api/users/7b0c4428-a655-4e44-86a0-8866d73013ae
 Content-Type: application/json
 
- {
-    "id": "45d8bf9f-8767-4441-b934-cb7342026cae",
-    "email": "onesmuswambugu135@gmail.com",
+{
+    "id": "7b0c4428-a655-4e44-86a0-8866d73013ae",
+    "email": "onesmus1024@gmail.com",
     "password": "123456",
-    "created_at": "2023-02-12T00:00:00.000Z",
+    "created_at": "2023-02-28T00:00:00.000Z",
     "is_admin": true,
     "is_deleted": false,
     "phone": "0710383551",
     "is_sent": false
   }
+  
 
 
 ### 5. Delete a user
@@ -47,7 +48,7 @@ POST   http://localhost:4000/api/users/login
 Content-Type: application/json
 
 {
-   "email": "onesmuswambugu135@gmail.com",
+   "email": "onesmus1024@gmail.com",
     "password": "123456"
 }
 
@@ -67,11 +68,11 @@ POST  http://localhost:4000/api/products
 Content-Type: application/json
 
 {
-    "name": "Cabbage",
-    "description":"Cabbage is a cruciferous vegetable and is associated with a reduced risk of many adverse health conditions.",
-    "price": 200,
+    "name": "Green Capsicum",
+    "description":"Capsicum green is used either chopped and raw in salads, or cooked in stir-fries or other mixed dishes. They are slightly bitter in taste and crunchy in texture.",
+    "price": 120,
     "category_id": "5afac669-aa18-4c9d-90c9-265067b10450",
-    "product_image_url":"https://s3.eu-west-1.amazonaws.com/s.keekapu.com/keekapu-web-pics/cabbage-EDB9E2E8-3A3A-43E1-B348-3D07ECF9B6A7.jpg",
+    "product_image_url":"https://s3.eu-west-1.amazonaws.com/s.keekapu.com/keekapu-web-pics/capsicum-green-5B6387AC-CA0E-4AF2-9912-20182D376BCF.jpg",
     "recently_added":"1",
     "featured":"1",
     "is_deleted":"0"
@@ -204,8 +205,9 @@ POST   http://localhost:4000/api/orders
 Content-Type: application/json
 
 
+
 {
-    "user_id": "a8e82a17-ff44-4d86-8d89-467088c14c56",
+    "user_id": "5abc6e23-9e9f-4ac4-bb7e-854c46b9a1ae",
     "is_paid": "0",
     "is_delivered": "0",
     "amount": "100"
@@ -227,7 +229,7 @@ Content-Type: application/json
 
 ### 10. Delete an order
 
-DELETE   http://localhost:4000/api/orders/a120ac52-2098-4ee8-936e-fbf627bc1fe7
+DELETE   http://localhost:4000/api/orders/0463a6d5-50f5-437e-b034-5c9ea1b21cea
 
 ### get by user id
 
@@ -351,11 +353,11 @@ Content-Type: application/json
 
 POST   http://localhost:4000/api/orderitems
 Content-Type: application/json
-
 {
-    "order_id": "bbf7cc2d-e741-430f-acea-75dd40319ec5",
-    "product_id": "12857889-5b30-46e7-b76c-5547e6166499",
-    "quantity": "1"
+  
+  "order_id": "a03bdc5d-9207-4201-948e-4e6f2cef755b",
+  "product_id": "6f1f3556-cdbe-4a14-8a7c-67c123412668",
+  "quantity": "3"
 }
 
 ### update order item

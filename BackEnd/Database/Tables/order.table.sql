@@ -14,3 +14,6 @@ CREATE TABLE Orders (
     CHECK (created_at <= GETDATE()),
     FOREIGN KEY (user_id) REFERENCES users(id),
 );
+
+-- empty orders table
+TRUNCATE TABLE Orders;

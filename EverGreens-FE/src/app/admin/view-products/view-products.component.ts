@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { Product } from 'src/app/interfaces/index';
-
-import { ProductService } from 'src/app/services/product.service';
-import { Subscription } from 'rxjs';
-
+import { Product } from 'src/app/interfaces/interfaces';
 
 @Component({
   selector: 'app-view-products',
@@ -16,15 +12,12 @@ import { Subscription } from 'rxjs';
 })
 export class ViewProductsComponent implements OnInit{
   products: Product[]=[];
-  subscription!: Subscription;
 
-  constructor (private productService:ProductService ){ }
+  constructor ( ){ }
   
   ngOnInit(): void {
-    this.subscription = this.productService.getProducts().subscribe(response =>{
-      console.log(response)
-     })
-    // console.log(this.products);
+    
+    console.log(this.products);
     
   }
   

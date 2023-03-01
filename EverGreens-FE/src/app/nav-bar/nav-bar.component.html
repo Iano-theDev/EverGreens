@@ -1,4 +1,4 @@
-<nav>
+<nav #nav (click)="onScroll($event)">
     <div class="upper">
         <div class="brand-name">
             <a routerLink="/">Evergreens</a>
@@ -17,19 +17,22 @@
         </div>
         <div class="cart-person ">
             <a routerLink="/cart">
-            
-                <mat-icon class="cart"  >shopping_cart</mat-icon>
+
+                <mat-icon class="cart">shopping_cart</mat-icon>
             </a>
-            <p id="number-of-items">5</p>
-            <a routerLink="/login" class="signups">
-               login
-               
-            </a>
-            <a routerLink="/register" class="signups">
-               Register  
-               
-            </a>
-            <mat-icon class="person">person</mat-icon>
+            <p id="number-of-items">{{cartItems}}</p>
+           
+
+                <mat-icon class="person">person</mat-icon>
+                <a routerLink="/login" class="signups">
+                    login
+
+                </a>
+                <a routerLink="/register" class="signups">
+                    Register
+
+                </a>
+                <mat-icon class="person">person</mat-icon>
         </div>
     </div>
     <div class="lower">
@@ -38,12 +41,12 @@
                 <mat-icon class="menu-icon">menu</mat-icon>
             </button>
         </div>
-       <div class="lower-links show" #links>
-        <button> shop </button>
-        <a routerLink="/products">meat & seafood</a>
-        <a routerLink="/products">Drinks</a>
-        <a routerLink="/products">Fruits & Vegetables</a>
-        <a routerLink="/products">contact us</a>
-       </div>
+        <div class="lower-links show" #links>
+            <button> shop </button>
+            <a routerLink="/products">meat & seafood</a>
+            <a routerLink="/products">Drinks</a>
+            <a routerLink="/products">Fruits & Vegetables</a>
+            <a routerLink="/products">contact us</a>
+        </div>
     </div>
 </nav>

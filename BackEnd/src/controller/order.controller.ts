@@ -9,10 +9,12 @@ import db from "../Databasehelper/db-connection";
 
 export const createOrder: RequestHandler = async (req: Request, res: Response) => {
     try {
+
+        console.log(req.body.user.id);
       
         const order: OrderModel = {
             id: uuidv4() as string,
-            user_id: req.body.user_id,
+            user_id: req.body.user.id,
             created_at: new Date().toISOString(),
             is_paid: req.body.is_paid,
             is_delivered: req.body.is_delivered,

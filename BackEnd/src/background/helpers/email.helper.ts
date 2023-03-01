@@ -3,6 +3,7 @@ import Emailconfig from '../config/email.config'
 
 
 function createTransporter(config:any){
+    console.log(config);
     return nodemailer.createTransport(config)
     }
 

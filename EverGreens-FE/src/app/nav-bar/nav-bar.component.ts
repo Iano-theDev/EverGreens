@@ -1,17 +1,20 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, DoCheck, OnInit, ViewChild } from '@angular/core';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
-export class NavBarComponent {
+export class NavBarComponent implements OnInit, DoCheck {
   isOpen = false;
+  cartItems = 0;
 
   @ViewChild('menu') menu: any;
   @ViewChild('links') links: any;
+  @ViewChild('nav') nav: any;
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   toggleMenu() {
     if (this.isOpen) {
@@ -25,4 +28,25 @@ export class NavBarComponent {
     
   }
 
+  ngOnInit() {
+    this.cartItems = this.cartService.getCartItems().length;
+  }
+
+  ngDoCheck() {
+    this.cartItems = this.cartService.getCartItems().length;
+  }
+
+
+  onScroll(event:Event) {
+    if (window.pageYOffset > this.nav.nativeElement.offsetTop) {
+      this.nav.nativeElement.classList.add('sticky');
+    } else {
+      this.nav.nativeElement.classList.remove('sticky');
+    }
+    console.log(this.nav.nativeElement.offsetTop);
+  }
+
+
+
+  
 }

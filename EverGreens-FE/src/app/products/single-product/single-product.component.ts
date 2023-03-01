@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from 'src/app/interfaces';
-import { ProductsServiceService } from 'src/app/Services/products-service.service';
+
 import { ActivatedRoute, Params } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-single-product',
@@ -15,14 +16,15 @@ export class SingleProductComponent implements OnInit {
   // products: Product[] = [];
   product?: Product;
 
-  constructor (private productService:ProductsServiceService, private route: ActivatedRoute){}
+  constructor ( private route: ActivatedRoute,private productService: ProductService) { }
 
   ngOnInit() {
   
 
     this.route.params.subscribe((param: Params) => {
-      // const productId = this.productService['snapshot'].param.get('id')
-      this.product = this.productService.getProductById(param['id'])
+      console.log(param.id);
+      this.product = this.productService.getProduct(param.id) as unknown as Product;
+      console.log(this.product);
     })
   }
 }

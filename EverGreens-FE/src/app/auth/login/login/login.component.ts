@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -15,14 +16,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 export class LoginComponent implements OnInit {
   loginForm!:FormGroup;
   submitted=false;
-  constructor(private formBuilder:FormBuilder){ }
+  constructor(private formBuilder:FormBuilder,private authService:AuthService) { }
 
   ngOnInit(){
     
     this.loginForm = this.formBuilder.group({
       
       email:['',[Validators.required,Validators.email]],
-      password:['',[Validators.required,Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')  ]],
+      password:['',[Validators.required  ]],
       
       
       
@@ -30,7 +31,10 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    this.submitted = true;
-    alert('Logged in')
+    this.submitted=true;
+    if(this.loginForm.invalid){
+      return;
+    }
+    this.authService.login(this.loginForm.value.email,this.loginForm.value.password);
   }
 }

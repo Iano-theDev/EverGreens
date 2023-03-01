@@ -1,0 +1,13 @@
+<div class="product-card" >
+    <div class="product-image">
+        <img src="{{product.product_image_url}}" alt="product image">
+    </div>
+    <div class="product-info">
+        <h3>{{product.name}}</h3>
+        <p>{{product.description}}</p>
+        <div class="product-info-price">
+            <span class="price">{{product.price | currency:'ksh':'symbol':'1.2-2'}}</span>
+            <button (click)="addToCart($event,product)">Add to cart</button>
+        </div>
+    </div>
+</div>
