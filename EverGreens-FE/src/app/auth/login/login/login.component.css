@@ -31,10 +31,8 @@
 form{
     margin-bottom: 20vh;
     width: 30vw;
-    /* text-align: center; */
     display: flex;
     flex-direction: column;
-    /* border: 1px solid black; */
     padding: 1em;
     gap: .9em;
 }
@@ -76,12 +74,6 @@ h2{
 }
 
 @media(max-width: 1058px){
-    .form-group{
-        /* width: 100%;
-        overflow: auto; */
-             background: #ebebeb;
-    }
-
     form {
      display: flex;
      flex-direction: column;

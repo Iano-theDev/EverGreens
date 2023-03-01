@@ -3,7 +3,6 @@
     width: 50%;
     height: 50%;
     margin: auto;
-    /* border: 1px solid #ccc; */
     padding: 4em;
     border-radius: 5px;
     box-shadow: 0 0 10px #ccc;
@@ -35,8 +34,6 @@
 }
 
 .form-group form .input-control label{
-    /* display: block;
-    width: 75px; */
     text-align: left;
 }
 h3 {
@@ -68,14 +65,7 @@ h3 {
     color: #fff;
 }
 
-
 @media(max-width: 1058px){
-    .form-group{
-        /* width: 100%;
-        overflow: auto; */
-             background: #ebebeb;
-    }
-
     .form-group form {
      display: flex;
      flex-direction: column;
@@ -90,13 +80,8 @@ h3 {
         text-align: left;
         gap: .5em;
     }
-
     input {
         width: auto;
-        /* height: 12em; */
-        /* background: #ff6464; */
     }
 
-
 }
-
