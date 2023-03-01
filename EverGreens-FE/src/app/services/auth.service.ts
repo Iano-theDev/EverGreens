@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router,private userService: UserService) { }
 
   login(email: string, password: string) {
     this.http.post('http://localhost:4000/api/users/login', { email, password }).subscribe((res) => {
@@ -18,6 +19,7 @@ export class AuthService {
       localStorage.setItem('user', JSON.stringify(user));
 
       if (user.is_admin == true) {
+        this.userService.setAdmin();
         this.router.navigate(['/admindash']);
       } else {
         this.router.navigate(['/']);

@@ -42,7 +42,9 @@
 <div class="products" *ngIf="!isLoading">
     <h2>All products</h2>
     <div class="all-products">
-        <app-one-product *ngFor="let product of products" [product]="product"></app-one-product>
+     
+            <app-one-product *ngFor="let product of products"  [product]="product" [routerLink]="['/products',product.id]"></app-one-product>
+    
     </div>
     
 </div>

@@ -1,6 +1,9 @@
 
+<div class="spinner" *ngIf="isLoading">
+    <app-spinner ></app-spinner>
+</div>
 
-<div class="cart-items">
+<div class="cart-items" *ngIf="!isLoading">
     <div *ngIf="cartItems.length == 0 else cart" class="empty-cart">
         <h3>Your cart is empty</h3>
         <p>Looks like you haven't added anything to your cart yet</p>

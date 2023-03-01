@@ -229,7 +229,7 @@ Content-Type: application/json
 
 ### 10. Delete an order
 
-DELETE   http://localhost:4000/api/orders/a120ac52-2098-4ee8-936e-fbf627bc1fe7
+DELETE   http://localhost:4000/api/orders/0463a6d5-50f5-437e-b034-5c9ea1b21cea
 
 ### get by user id
 
@@ -353,11 +353,11 @@ Content-Type: application/json
 
 POST   http://localhost:4000/api/orderitems
 Content-Type: application/json
-
 {
-    "order_id": "bbf7cc2d-e741-430f-acea-75dd40319ec5",
-    "product_id": "12857889-5b30-46e7-b76c-5547e6166499",
-    "quantity": "1"
+  
+  "order_id": "a03bdc5d-9207-4201-948e-4e6f2cef755b",
+  "product_id": "6f1f3556-cdbe-4a14-8a7c-67c123412668",
+  "quantity": "3"
 }
 
 ### update order item

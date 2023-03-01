@@ -4,28 +4,34 @@ import { RouterModule } from '@angular/router';
 import { Cart } from 'src/app/interfaces/interfaces';
 import { CartService } from 'src/app/services/cart.service';
 import { Product } from 'src/app/models/product.model';
+import { SpinnerComponent } from "../../../shared/spinner/spinner.component";
 
 @Component({
-  selector: 'app-cart',
-  standalone: true,
-  imports: [CommonModule,RouterModule],
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+    selector: 'app-cart',
+    standalone: true,
+    templateUrl: './cart.component.html',
+    styleUrls: ['./cart.component.css'],
+    imports: [CommonModule, RouterModule, SpinnerComponent]
 })
 export class CartComponent implements OnInit , DoCheck {
-
-  constructor(private cartService: CartService) { }
-
   cartItems: any = [];
   cartTotal = 0;
+  isLoading: boolean;
+  constructor(private cartService: CartService) {
+    this.isLoading = this.cartService.isLoading;
+   }
+
+  
 
   ngOnInit() {
     this.cartItems = this.cartService.getCartItems();
     this.cartTotal = this.cartService.getCartTotal();
+    this.isLoading = this.cartService.isLoading;
   }
   ngDoCheck(): void {
     this.cartItems = this.cartService.getCartItems();
     this.cartTotal = this.cartService.getCartTotal();
+    this.isLoading = this.cartService.isLoading;
   }
 
   removeCartItem(cartItem: Cart) {
@@ -49,8 +55,10 @@ export class CartComponent implements OnInit , DoCheck {
   }
 
   checkout() {
+    
     this.cartService.checkoutCart();
     this.cartTotal = this.cartService.getCartTotal();
     this.cartItems = this.cartService.getCartItems();
+  
   }
 }

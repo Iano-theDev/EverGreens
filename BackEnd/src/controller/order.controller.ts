@@ -9,6 +9,8 @@ import db from "../Databasehelper/db-connection";
 
 export const createOrder: RequestHandler = async (req: Request, res: Response) => {
     try {
+
+        console.log(req.body.user.id);
       
         const order: OrderModel = {
             id: uuidv4() as string,

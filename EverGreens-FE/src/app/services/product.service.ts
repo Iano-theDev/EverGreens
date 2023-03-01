@@ -10,14 +10,22 @@ export class ProductService {
   products: Product[] = []
 
   constructor(private http: HttpClient) { 
-    this.products = [];
+    this.products = []
   }
 
   getProducts(){
     return this.http.get('https://ridespark.ml/api/products');
   }
-  getProduct(id: string): Product {
-    return this.products.find((p) => p.id === id) as Product;
+  getProduct(id: string){
+    this.http.get('http://localhost:4000/api/products/'+id).subscribe((res) => {
+      let response = res as any;
+      let product = response[0]
+      
+      return product;
+    }
+    );
+
+
   }
 
   addProduct(product: Product): void {

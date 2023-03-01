@@ -123,6 +123,13 @@
   }
 }
 
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80vh;
+}
 
 @media screen and (max-width: 480px) {
   .cart-items .cart-item {

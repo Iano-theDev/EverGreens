@@ -6,13 +6,13 @@ interface CartItem {
   product: Product;
   quantity: number;
 }
-interface order{
+interface order {
   user_id: string,
   is_paid: string,
   is_delivered: string,
-  amount:string
+  amount: string
 }
-interface orderItem{
+interface orderItem {
   order_id: string,
   product_id: string,
   quantity: string
@@ -23,6 +23,7 @@ interface orderItem{
 
 export class CartService {
   cartItems: CartItem[] = [];
+  isLoading = false;
 
   constructor(private http: HttpClient) { }
 
@@ -31,7 +32,7 @@ export class CartService {
     if (item) {
       item.quantity++;
     } else {
-      this.cartItems.push({product, quantity: 1});
+      this.cartItems.push({ product, quantity: 1 });
     }
   }
 
@@ -63,16 +64,27 @@ export class CartService {
   }
 
   checkoutCart() {
-    this.emptyCart();
+    this.isLoading = true;
+    let orderId = "";
 
-    this.http.post('http://localhost:4000/api/orders', {user_id:'5abc6e23-9e9f-4ac4-bb7e-854c46b9a1ae',is_paid: "0", is_delivered: "0", amount: this.getCartTotal().toString()}).subscribe((res) => {
+    console.log(this.getCartTotal());
+
+    this.http.post('http://localhost:4000/api/orders', { user_id: '5abc6e23-9e9f-4ac4-bb7e-854c46b9a1ae', is_paid: "0", is_delivered: "0", amount: this.getCartTotal().toString() }).subscribe((res) => {
       console.log(res);
-    }
-    );
+      let response = res as any;
+      orderId = response[0].id;
+      console.log("order inside", orderId);
+      this.cartItems.forEach(item => {
+        this.http.post(' http://localhost:4000/api/orderitems', { order_id: orderId, product_id: item.product.id, quantity: item.quantity.toString() }).subscribe((res) => {
+
+          this.emptyCart();
+          this.isLoading = false;
+        });
+      });
+
+    });
     
 
-    
+
   }
-
-
 }

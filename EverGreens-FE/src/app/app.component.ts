@@ -1,10 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit,DoCheck {
   title = 'evergreens-frontend';
+  isAdmin: boolean 
+  constructor(private userService: UserService) {
+    this.isAdmin = this.userService.isAdmin;
+   }
+
+
+  ngOnInit(): void {
+    this.isAdmin = this.userService.isAdmin;
+  }
+
+  ngDoCheck(): void {
+    this.isAdmin = this.userService.isAdmin;
+  }
+
+  
 }
