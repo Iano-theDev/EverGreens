@@ -11,7 +11,7 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router,private userService: UserService) { }
 
   login(email: string, password: string) {
-    this.http.post('http://localhost:4000/api/users/login', { email, password }).subscribe((res) => {
+    this.http.post('https://ridespark.ml/api/users/login', { email, password }).subscribe((res) => {
       let response = res as any;
       let token = response.token;
       let user = response.user;
@@ -32,7 +32,7 @@ export class AuthService {
 
   register(email: string, password: string, phone: string) {
 
-    this.http.post('http://localhost:4000/api/users/register', { email, password, phone }).subscribe((res) => {
+    this.http.post('https://ridespark.ml/api/users/register', { email, password, phone }).subscribe((res) => {
 
       let response = res as any;
       let token = response.token;

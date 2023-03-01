@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { Users } from 'src/app/interfaces/interfaces';
 import { Subscription } from 'rxjs';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-view-users',
@@ -13,10 +14,14 @@ import { Subscription } from 'rxjs';
 })
 export class ViewUsersComponent implements OnInit { 
   users!: Users[]
-  constructor(){ }
+  subscription!: Subscription
+  constructor(private userService: UserService){ }
 
   ngOnInit(): void {
-    
+    this.subscription = this.userService.getUsers().subscribe((res)=>{
+      this.users = res as Users[]
+      
+    })
   }
   
   

@@ -5,6 +5,8 @@ export interface Users{
   name: string
   email: string
   password: string
+  is_admin:string
+  created_at:string
 }
 
 export interface AddProducts{
@@ -17,14 +19,14 @@ export interface AddProducts{
     
 }
 
-export interface Product{
-    id:number
-    name:string
-    description:string
-    image:string
-    price:string
-    category:string
-}
+// export interface Product{
+//     id:number
+//     name:string
+//     description:string
+//     image:string
+//     price:string
+//     category:string
+// }
 
 export interface Cart {
     id:number

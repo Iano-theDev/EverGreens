@@ -5,8 +5,7 @@
 		<thead>
 			<tr>
 				<th>Product Name</th>
-				<th>Category</th>
-				<th>Description</th>
+				<th>Date of Creation</th>
 				<th>Unit Price(Ksh)</th>
 			</tr>
 		</thead>
@@ -14,7 +13,7 @@
 			<tr *ngFor=" let product of products">
 				<td>{{product.name}}</td>
 				
-				<td>{{product.description}}</td>
+				<td>{{product.created_at|date}}</td>
 				<td>{{product.price}} </td>
 			</tr>
 			

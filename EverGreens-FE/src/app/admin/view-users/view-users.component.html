@@ -6,14 +6,16 @@
 			<tr>
 				<th>User Name</th>
 				<th>Email</th>
+				<th>create at</th>
 				<th>Remove</th>
 				
 			</tr>
 		</thead>
 		<tbody>
 			<tr *ngFor=" let user of users">
-				<td>{{user.name}}</td>
+				<td>{{user.is_admin}}</td>
 				<td>{{user.email}}</td>
+				<td>{{user.created_at|date}}</td>
 				<td><button>Delete</button></td>
 				
 			</tr>

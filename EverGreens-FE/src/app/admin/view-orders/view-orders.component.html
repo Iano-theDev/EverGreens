@@ -1,0 +1,27 @@
+
+
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>Customer Email</th>
+				<th>Date of Creation</th>
+				<th>Is Deleted</th>
+				<th>Is Delivered</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor=" let order of orders_user">
+				<td>{{order.user}}</td>
+				
+				<td>{{order.created_at|date}}</td>
+				<td>{{order.is_paid}} </td>
+				<td *ngIf="order.is_delivered == true" (click)="updateNotDelivered(order)" class="deliver-btn"> &check;</td>
+                <td *ngIf="order.is_delivered == false" (click)="updateToDelivered(order)" class="deliver-btn"> &cross;</td>
+			</tr>
+			
+		</tbody>
+	</table>
+</body>
+
+
