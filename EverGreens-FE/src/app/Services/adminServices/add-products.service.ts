@@ -20,7 +20,7 @@ export class AddProductsService {
 
   addProduct(product: Product):Observable<Message> {
     // this.products.push(product)
-    return this.http.post<Message>('http://localhost:4000/api/products',product)
+    return this.http.post<Message>('http://ridespark.ml/api/products',product)
   }
   // getProduct():Product[] {
   //   return this.products
