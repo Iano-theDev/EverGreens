@@ -16,3 +16,13 @@ th {
     background-color: #4CAF50;
     color: white;
 }
+button{
+    background-color: #15CF3E;
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-left: 5vw;
+    padding: 5px 15px;
+    border: none;
+    color: aliceblue;
+    width: 30%;  
+}

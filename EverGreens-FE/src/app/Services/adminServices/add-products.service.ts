@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AddProducts,Product } from 'src/app/interfaces/interfaces';
+import { AddProducts,Product,Message } from 'src/app/interfaces/interfaces';
+import {HttpClient} from '@angular/common/http'
+import {Observable} from 'rxjs'
 
 
 @Injectable({
@@ -7,7 +9,7 @@ import { AddProducts,Product } from 'src/app/interfaces/interfaces';
 })
 export class AddProductsService {
  
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   
 
@@ -16,10 +18,12 @@ export class AddProductsService {
     // {name:'chicken',description:'well bred chicken',image:'',price:'700',category: 'fresh Meat'},
   ]
 
-  addProduct(product: Product):void {
-    this.products.push(product)
+  addProduct(product: Product):Observable<Message> {
+    // this.products.push(product)
+    return this.http.post<Message>('http://localhost:4000/api/products',product)
   }
-  getProduct(): Product[] {
-    return this.products
-  }
+  // getProduct():Product[] {
+  //   return this.products
+  //   return this.http.get('https://ridespark.ml/api/products')
+  // }
 }
