@@ -6,6 +6,7 @@
 			<tr>
 				<th>User Name</th>
 				<th>Email</th>
+				<th>Remove</th>
 				
 			</tr>
 		</thead>
@@ -13,6 +14,7 @@
 			<tr *ngFor=" let user of users">
 				<td>{{user.name}}</td>
 				<td>{{user.email}}</td>
+				<td><button>Delete</button></td>
 				
 			</tr>
 			<!-- <tr>

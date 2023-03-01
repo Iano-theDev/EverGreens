@@ -31,7 +31,9 @@ export class AddProductsComponent implements OnInit{
 
   AddProduct(){
      const newProduct:Product = {...this.addProduct.value, id:Math.floor(Math.random() *10000)}
-     this.ProductsService.addProduct(newProduct)
+     this.ProductsService.addProduct(newProduct).subscribe(response =>{
+      console.log(response)
+     })
     //  console.log(newProduct);
      
   }
