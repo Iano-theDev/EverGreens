@@ -17,4 +17,8 @@ CREATE TABLE Orders (
 
 -- empty orders table
 
-DELETE FROM Orders;
+
+ALTER TABLE Orders
+ADD  is_updated BIT NOT NULL DEFAULT 0;
+
+SELECT * FROM Orders;

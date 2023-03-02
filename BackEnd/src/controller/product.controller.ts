@@ -138,14 +138,15 @@ export const deleteProduct: RequestHandler = async (req: Request, res: Response)
 export const updateProduct: RequestHandler = async (req: Request, res: Response) => {
     try {
         const id = req.params.id;
-        const productToUpdate = await db.exec("GetProductById", { id });
+        const productToUpdate = await db.exec("GetProductById", { id }) as unknown as ProductModel[];
         if (productToUpdate) {
           if (productToUpdate.length > 0){
-            const updated: ProductModel = { ...productToUpdate, ...req.body };
+            const updated: ProductModel = { ...productToUpdate[0], ...req.body };
             const { error } = validateProduct(updated);
+            console.log("eeror",error);
             if (error) return res.status(400).send(error.details[0].message);
             if (db.checkConnection() as unknown as boolean) {
-                const updatedProduct: ProductModel = await db.exec("InsertOrUpdateProduct", { ...updated }) as unknown as ProductModel;
+                const updatedProduct: ProductModel = await db.exec("InsertOrUpdateProduct", {...updated}) as unknown as ProductModel;
                 if (updatedProduct) {
                     res.status(200).send(updatedProduct);
                 }
@@ -165,6 +166,7 @@ export const updateProduct: RequestHandler = async (req: Request, res: Response)
         }
 
     } catch (error) {
+        console.log(error);
         res.status(500).send("Error updating product");
     }
 }

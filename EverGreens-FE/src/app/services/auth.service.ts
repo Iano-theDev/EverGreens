@@ -37,9 +37,7 @@ export class AuthService {
       let response = res as any;
       let token = response.token;
       localStorage.setItem('token', token);
-
-      console.log(res);
-
+      this.userService.setUser();
       this.router.navigate(['/']);
 
 

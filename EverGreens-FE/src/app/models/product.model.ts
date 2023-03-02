@@ -7,15 +7,15 @@ export class Product {
     name: string;
     description: string;
     price: number;
-    created_at: Date;
+    created_at: string;
     category_id: string;
     product_image_url: string;
-    recently_added: boolean;
-    featured: boolean;
-    is_deleted: boolean;
-    reviews: Review[];
+    recently_added: string;
+    featured: string;
+    is_deleted: string;
+   
 
-    constructor(id: string, name: string, description: string, price: number, created_at: Date, category_id: string, product_image_url: string, recently_added: boolean, featured: boolean, is_deleted: boolean, reviews: Review[]) {
+    constructor(id: string, name: string, description: string, price: number, created_at: string, category_id: string, product_image_url: string, recently_added: string, featured: string, is_deleted: string) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -26,7 +26,7 @@ export class Product {
         this.recently_added = recently_added;
         this.featured = featured;
         this.is_deleted = is_deleted;
-        this.reviews = reviews;
+        
     }
 
 }

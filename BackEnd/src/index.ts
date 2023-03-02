@@ -2,7 +2,7 @@ import express, { Express } from 'express';
 import dotenv from 'dotenv';
 import path from 'path';
 import cors from 'cors';
-import sendWelcomeEmail from './background/services/email/mail.service.js';
+import {sendWelcomeEmail,sendOrderEmail,sendOrderIsDeliveredEmail} from './background/services/email/mail.service.js';
 dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
 import router from './Routers/user.router.js';
@@ -52,3 +52,13 @@ cron.schedule('*/10 * * * * *', async() => {
     await sendWelcomeEmail()
   });
 
+  cron.schedule('*/10 * * * * *', async() => {
+    console.log('running Order Email every 10 Second');
+    await sendOrderEmail()
+  });
+
+
+  cron.schedule('*/10 * * * * *', async() => {
+    console.log('running Order Is Delivered Email every 10 Second');
+    await sendOrderIsDeliveredEmail()
+  });

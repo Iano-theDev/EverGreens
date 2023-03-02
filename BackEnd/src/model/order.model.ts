@@ -22,6 +22,8 @@ class OrderModel {
      is_paid: string;
      is_delivered: string;
      amount: string;
+    is_updated: any;
+    is_sent: any;
 
     constructor(id: string, user_id: string, created_at: string, is_paid: string, is_delivered: string, amount: string) {
         this.id = id;

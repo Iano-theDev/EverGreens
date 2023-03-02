@@ -1,0 +1,50 @@
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 10px;
+    font-family: sans-serif;
+    }
+    
+    .left {
+    
+        width: 300px;
+        height: 300px;
+    
+    }
+    .left img{
+        width: 100%;
+        height: 100%;
+    }
+    .right {
+    
+        width: 300px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2px;
+        margin-top: -30px;
+    }
+    
+    .right input{
+        padding: 10px;
+    }
+    
+    .right button{
+        padding: 5px 15px;
+        background-color: #15CF3E;
+        border-radius: 50px;
+        margin-top: 10px;
+        border: none;
+        color: aliceblue;
+    }
+
+    input.ng-invalid.ng-touched{
+        border: 1px solid red;
+    }
+    h3{
+        color: #15CF3E;
+    }
+    
