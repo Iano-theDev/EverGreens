@@ -133,6 +133,14 @@ nav .lower .lower-links a:hover{
 .show {
     display: block;
 }
+.cart-person a{
+    color: black;
+    text-decoration: none;
+}
+
+.cart-person a:hover{
+    color: rgb(74, 240, 74);
+}
 
 
 
