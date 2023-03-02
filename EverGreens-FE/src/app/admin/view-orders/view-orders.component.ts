@@ -42,7 +42,7 @@ export class ViewOrdersComponent implements OnInit{
   }
   updateNotDelivered(order:any){
 
-    let orderUpdated = {...order,is_delivered:'0',is_paid:'0',amount:order.amount.toString()}
+    let orderUpdated = {...order,is_delivered:'0',is_paid:'0',is_updated:'0',is_sent:'0',amount:order.amount.toString()}
     this.orderService.updateOrders(orderUpdated).subscribe(res=>{
       this.getOrders()
     })
@@ -50,7 +50,7 @@ export class ViewOrdersComponent implements OnInit{
   }
   updateToDelivered(order:any){
 
-    let orderUpdated = {...order,is_delivered:'1',is_paid:'0',amount:order.amount.toString()}
+    let orderUpdated = {...order,is_delivered:'1',is_paid:'1',is_updated:'0',is_sent:'1',amount:order.amount.toString()}
     this.orderService.updateOrders(orderUpdated).subscribe(res=>{
       this.getOrders()
     })

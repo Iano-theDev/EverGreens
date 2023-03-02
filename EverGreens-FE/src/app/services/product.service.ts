@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Params } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Product } from '../models/product.model';
 
 @Injectable({
@@ -8,6 +10,7 @@ import { Product } from '../models/product.model';
 export class ProductService {
 
   products: Product[] = []
+  params!: Observable<Params>;
 
   constructor(private http: HttpClient) { 
     this.products = []
@@ -16,15 +19,8 @@ export class ProductService {
   getProducts(){
     return this.http.get('https://ridespark.ml/api/products');
   }
-  getProduct(id: string){
-    this.http.get('http://localhost:4000/api/products/'+id).subscribe((res) => {
-      let response = res as any;
-      let product = response[0]
-      return product;
-    }
-    );
-
-
+  getProduct(id: string): Observable<Product[]> {
+    return this.http.get<Product[]>('https://ridespark.ml/api/products/' + id);
   }
 
   addProduct(product: Product): void {
@@ -33,11 +29,12 @@ export class ProductService {
     })
   }
 
-  updateProduct(product: Product): void {
-    const index = this.products.findIndex((p) => p.id === product.id);
-    this.products[index] = product;
+  updateProduct(product: Product): Observable<Product[]> {
+    const url = `https://localhost:4000/api/products/${product.id}`;
+    console.log("product",product);
+    
+    return this.http.put<Product[]>(url, product)
   }
-
   deleteProduct(id: string): void {
     const index = this.products.findIndex((p) => p.id === id);
     this.products.splice(index, 1);
@@ -50,3 +47,5 @@ export class ProductService {
   
 
 }
+
+

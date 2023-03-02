@@ -82,11 +82,11 @@ export const sendOrderEmail = async () => {
             const product = products.find((product: any) => product.id === orderItem.product_id)
             return { ...orderItem, product }
         })
-        ejs.renderFile('/media/onesmus/d42c9065-8792-4148-a205-cc0a748da294/dev/The Jitu/assignment/comforty/backend/src/background/services/email/templates/order.ejs', { name: user.email, orderItems: orderItemsWithProducts, order }, async (error: any, html: any) => {
+        ejs.renderFile('/media/onesmus/d42c9065-8792-4148-a205-cc0a748da294/dev/The Jitu/assignment/comforty/backend/src/background/services/email/templates/orderPlaced.ejs', { name: user.email, orderItems: orderItemsWithProducts, order }, async (error: any, html: any) => {
             const message = {
                 from: process.env.EMAIL,
                 to: user.email,
-                subject: "welcome to comforty",
+                subject: "Order Confirmation",
                 html
             };
 
@@ -104,7 +104,7 @@ export const sendOrderEmail = async () => {
 
 export const sendOrderIsDeliveredEmail = async () => {
     const pool = await mssql.connect(DBconfig)
-    const orders = await (await pool.request().query("SELECT * FROM Orders WHERE is_sent ='0' AND is_updated ='1'")).recordset
+    const orders = await (await pool.request().query("SELECT * FROM Orders WHERE is_sent ='1' AND is_delivered ='1' AND is_updated ='0'")).recordset
     console.log("delivered",orders);
     
     for (let order of orders) {
@@ -115,11 +115,11 @@ export const sendOrderIsDeliveredEmail = async () => {
             const product = products.find((product: any) => product.id === orderItem.product_id)
             return { ...orderItem, product }
         })
-        ejs.renderFile('/media/onesmus/d42c9065-8792-4148-a205-cc0a748da294/dev/The Jitu/assignment/comforty/backend/src/background/services/email/templates/order-is-delivered.ejs', { name: user.email, orderItems: orderItemsWithProducts, order }, async (error: any, html: any) => {
+        ejs.renderFile('/media/onesmus/d42c9065-8792-4148-a205-cc0a748da294/dev/The Jitu/assignment/comforty/backend/src/background/services/email/templates/orderDelivered.ejs', { name: user.email, orderItems: orderItemsWithProducts, order }, async (error: any, html: any) => {
             const message = {
                 from: process.env.EMAIL,
                 to: user.email,
-                subject: "welcome to comforty",
+                subject: "Your order is delivered",
                 html
             };
 

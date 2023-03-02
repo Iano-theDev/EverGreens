@@ -51,10 +51,14 @@ const routes: Routes = [
         loadComponent: () => import('./admin/add-products/add-products.component').then(d => d.AddProductsComponent),
       },
       {
+        path: 'updateproducts/:id',
+        loadComponent: () => import('./admin/update-products/update-products.component').then(d => d.UpdateProductsComponent)
+      },
+      {
         path: 'orders',
         loadComponent: () => import('./admin/view-orders/view-orders.component').then(d => d.ViewOrdersComponent),
       },
-      
+
     ]
   },
 

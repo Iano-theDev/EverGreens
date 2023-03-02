@@ -1,4 +1,5 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { UserService } from './services/user.service';
 
 @Component({
@@ -7,6 +8,7 @@ import { UserService } from './services/user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit,DoCheck {
+[x: string]: any;
   title = 'evergreens-frontend';
   isAdmin: boolean 
   constructor(private userService: UserService) {

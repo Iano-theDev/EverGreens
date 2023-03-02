@@ -1,15 +1,20 @@
 .search-container{
     width:100%;
     display: flex;
-    justify-content: space-between;
-    color: green;
+    justify-content: space-around;
+    color: #09661d;
     align-items: center;
+    padding: 0px 0px 0px 20px;
+    background: #ffffff;
+    border-top: .2em solid #09661d;
+    margin-top: .2em;
 }
 
 .search-container .logo{
     
     display: flex;
     flex-direction: column;
+    padding: 0px 60px 0px 0px;
  
 }
 
@@ -30,15 +35,65 @@ form button{
 }
 
 .menu{
-    width: 100px;
-
-}
-.menu .links{
+    width: 20%;
     display: flex;
     flex-direction: column;
+    align-items: start;
+    gap: 2em;
+    margin-left: 0em;
+    padding: 1.5em;
+    margin-top: 0;
+    background: #bacbbb;
+    height: 100%;
 }
 
-.content{
-    display: inline;
-    width: 100px;
+.menu
+.links{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 2em;
+}
+
+.menu
+.links
+a {
+    text-decoration: none;
+    color: #1f1f1f;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.menu
+.links
+a:hover {
+    text-decoration: none;
+    color: #056e00;
+    cursor: pointer;
+}
+
+.menu-content-container{
+    display: flex;
+    flex-direction: row;
+    padding: 3em;
+    padding-top: 5em;
+    gap: 2em;
+    padding-left: 0;
+    background: #bacbbb;
+    height: 80vh;
+}
+
+.content {
+    margin-top: 3.1em;
+    width: 50%;
+}
+
+@media (max-width: 1058px){
+    .menu-content-container{
+        display: flex;
+        flex-direction: row; 
+    }
+
 }
