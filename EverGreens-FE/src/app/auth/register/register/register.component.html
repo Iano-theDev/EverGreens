@@ -5,21 +5,22 @@ phone: ['', [Validators.required]],
 
 use reactive forms no bootstrap -->
 <div class="form-group">
-  sign up
+ 
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <h3>Register</h3>
     <div class="input-control">
       <label for="email">Email</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" formControlName="email">
+      <input type="email" class="form-control" id="email"  formControlName="email">
     </div>
 
     <div class="input-control">
       <label for="password">Password</label>
-      <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+      <input type="password" class="form-control" id="password" formControlName="password">
     </div>
 
     <div class="input-control">
       <label for="phone">Phone</label>
-      <input type="text" class="form-control" id="phone" placeholder="Phone" formControlName="phone">
+      <input type="text" class="form-control" id="phone" formControlName="phone">
     </div>
 
     <button type="submit">Submit</button>

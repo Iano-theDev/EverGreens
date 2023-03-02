@@ -16,4 +16,5 @@ CREATE TABLE Orders (
 );
 
 -- empty orders table
-TRUNCATE TABLE Orders;
+
+DELETE FROM Orders;

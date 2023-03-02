@@ -1,28 +1,29 @@
 <div class="content">
-    <div class="left">
-        <img src="https://justcook.butcherbox.com/wp-content/uploads/2020/01/veggie-and-meat-800x450.jpg" alt="">
-    </div>
-    <form [formGroup]="addProduct" (ngSubmit)="AddProduct()">
+  <div class="left">
+    <img src="https://www.seekpng.com/png/full/403-4036110_alquiler-de-huertos-urbanos-heart-shaped-fruits-and.png"
+      alt="">
+  </div>
+  <form [formGroup]="addProduct" (ngSubmit)="AddProduct()">
     <div class="right">
-      
-        <h3> Add a New Product</h3>
-        <Label>Name</Label>
-        <input type="text" formControlName="name" />
 
-        <Label>Description</Label>
-        <input type="text" formControlName="description" />
+      <h3> Add a New Product</h3>
+      <label>Name</label>
+      <input type="text" formControlName="name" />
 
-        <Label>Image</Label>
-        <input type="text" formControlName="product_image_url" />
+      <label>Description</label>
+      <input type="text" formControlName="description" />
 
-          <Label>Price</Label>
-        <input type="text" formControlName="price" />
+      <label>Image</label>
+      <input type="text" formControlName="product_image_url" />
 
-          <Label>Category</Label>
-        <input type="text" formControlName="category_id" />
+      <label>Price</label>
+      <input type="text" formControlName="price" />
 
-        <button type="submit"> Submit Data</button>
-    
+      <label class="category">Category</label>
+      <input class="category" type="text" formControlName="category_id" />
+
+      <button type="submit"> Submit Data</button>
+
     </div>
-</form>
+  </form>
 </div>
