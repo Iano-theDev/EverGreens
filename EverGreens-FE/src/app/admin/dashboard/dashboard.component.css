@@ -90,10 +90,10 @@ a:hover {
     width: 50%;
 }
 
-@media (max-width: 1058px){
+/* @media (max-width: 1058px){
     .menu-content-container{
         display: flex;
         flex-direction: row; 
     }
 
-}
+} */
