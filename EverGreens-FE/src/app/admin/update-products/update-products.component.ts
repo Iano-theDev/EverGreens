@@ -18,7 +18,7 @@ export class UpdateProductsComponent implements OnInit{
   constructor(private fb: FormBuilder,private productService:ProductService,private router: Router, private route:ActivatedRoute){}
   
   updateProduct!:FormGroup
-  product!:Product
+  product!:Product[]
   updated= false
 
   
@@ -33,7 +33,7 @@ export class UpdateProductsComponent implements OnInit{
     })
    this.route.params.subscribe((params: Params) => {
       this.productService.getProduct(params['id']).subscribe(product => {
-        this.product = product[0];
+        this.product = product;
         console.log(product);
         
         this.updateProduct.patchValue({
@@ -59,9 +59,11 @@ export class UpdateProductsComponent implements OnInit{
   
 
     UpdateProduct(){
-      let product: Product = { ...this.product, ...this.updateProduct.value,recently_added:"1",featured:"1",is_deleted:"1"}
-      this.productService.updateProduct(product).subscribe(() => {
-        this.router.navigate(['updateproducts']);
+      let product: Product= { ...this.product[0], ...this.updateProduct.value,recently_added:"1",featured:"1",is_deleted:"1",created_at:"2021-08-10T12:00:00.000Z"}
+     
+      this.productService.updateProduct(product).subscribe((res) => {
+        console.log(res);
+        this.router.navigate(['/admindash/products']);
         this.updated = true;
       });
     }

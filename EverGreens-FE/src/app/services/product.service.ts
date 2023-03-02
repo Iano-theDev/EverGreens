@@ -29,12 +29,13 @@ export class ProductService {
     })
   }
 
-  updateProduct(product: Product): Observable<Product[]> {
-    const url = `https://localhost:4000/api/products/${product.id}`;
+  updateProduct(product: Product) {
+    const url = `http://localhost:4000/api/products/${product.id}`;
     console.log("product",product);
     
-    return this.http.put<Product[]>(url, product)
+    return this.http.put(url, product)
   }
+
   deleteProduct(id: string): void {
     const index = this.products.findIndex((p) => p.id === id);
     this.products.splice(index, 1);
