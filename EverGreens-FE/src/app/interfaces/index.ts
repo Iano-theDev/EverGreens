@@ -1,8 +1,14 @@
+
+
 export interface Product{
-    productId: string;
+    id: string;
     name: string;
     description: string;
     price: number;
-    category: string;
-    imgUrl: string;
+    product_image_url: string;
+    category_id: string;
+    created_at: string;
+    featured: boolean;
+    is_deleted: boolean;
+    recently_added: boolean;
 }

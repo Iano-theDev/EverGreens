@@ -11,6 +11,8 @@ const orderSchema = Joi.object({
     is_paid: Joi.string().max(255).required(),
     is_delivered: Joi.string().max(255).required(),
     amount: Joi.string().max(255).required(),
+    is_updated: Joi.string().max(255).required(),
+    is_sent: Joi.string().max(255).required(),
 });
 
 export const validateOrder = (order: OrderModel) => {

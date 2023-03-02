@@ -1,15 +1,4 @@
 
-<app-nav-bar ></app-nav-bar>
+<app-nav-bar *ngIf="!isAdmin"></app-nav-bar>
 <router-outlet></router-outlet>
-<app-footer ></app-footer>
-
-<!-- Experimental -->
-<!-- <ng-container *ngIf="!activatedRoute.snapshot.url.join('/').includes('admindash')">
-    <app-nav-bar ></app-nav-bar>
-</ng-container>
-
-<router-outlet></router-outlet>
-
-<ng-container *ngIf="!activatedRoute.snapshot.url.join('/').includes('admindash')">
-    <app-footer ></app-footer>
-</ng-container> -->
+<app-footer *ngIf="!isAdmin"></app-footer>

@@ -19,6 +19,8 @@ export const createOrder: RequestHandler = async (req: Request, res: Response) =
             is_paid: req.body.is_paid,
             is_delivered: req.body.is_delivered,
             amount: req.body.amount,
+            is_updated: req.body.is_updated,
+            is_sent: req.body.is_sent
         }
         
           // validate order fields
@@ -136,28 +138,28 @@ export const updateOrder: RequestHandler = async (req: Request, res: Response) =
                 is_paid: req.body.is_paid || order[0].is_paid,
                 is_delivered: req.body.is_delivered || order[0].is_delivered,
                 amount: req.body.amount || order[0].amount,
+                is_updated: req.body.is_updated || order[0].is_updated,
+                is_sent: req.body.is_sent || order[0].is_sent,
             }
 
             console.log(updatedOrder);
 
             const { error } = validateOrder(updatedOrder);
             if (error) return res.status(400).send(error.details[0].message);
-
-
+        
             const updatedOrderResult = await db.exec("InsertOrUpdateOrder", updatedOrder) as unknown as OrderModel;
 
             if (updatedOrderResult) {
                 res.status(200).send(updatedOrderResult);
             }
             else {
+                console.log(updateOrder);
                 res.status(500).send("Error updating order");
             }
         }
     } catch (error) {
         console.log(error);
-        
-
-        res.status(500).send("Error updating order");
+        res.status(500).send("Error updating order with id: " + req.params.id);
 
     }
 }
