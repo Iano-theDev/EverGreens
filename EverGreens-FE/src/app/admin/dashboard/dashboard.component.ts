@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule,RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterModule,RouterLink, RouterLinkActive, ActivatedRoute } from '@angular/router';
 
 import { MatIconModule } from '@angular/material/icon';
 
@@ -18,5 +18,11 @@ export class DashboardComponent {
   // constructor(private iconService: IconService) {
   //   this.iconService.addIcon(dashiconsProducts);
   //   this.icon = 'dashicons:products';
-  // }
+  // }  
+
+  // constructor(private activatedRoute: ActivatedRoute) {
+  //   //   this.iconService.addIcon(dashiconsProducts);
+  //   //   this.icon = 'dashicons:products';
+  //   } 
+
 }
