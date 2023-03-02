@@ -28,11 +28,15 @@ const routes: Routes = [
       loadComponent:() => import('./admin/view-users/view-users.component').then(d => d.ViewUsersComponent)  
     },
       {path: 'products', 
-      loadComponent:() => import('./admin/view-products/view-products.component').then(d => d.ViewProductsComponent),  
+      loadComponent:() => import('./admin/view-products/view-products.component').then(d => d.ViewProductsComponent), 
+  },
+        {path:'updateproducts/:id', 
+      loadComponent:() => import('./admin/update-products/update-products.component').then(d => d.UpdateProductsComponent)
     },
       {path: 'addproducts', 
       loadComponent:() => import('./admin/add-products/add-products.component').then(d => d.AddProductsComponent),  
     },
+      
       {path: 'orders', 
       loadComponent:() => import('./admin/view-orders/view-orders.component').then(d => d.ViewOrdersComponent),  
     },

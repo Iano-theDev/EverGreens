@@ -10,7 +10,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr *ngFor=" let product of products">
+			<tr *ngFor=" let product of products"  [routerLink]="['/admindash','updateproducts' ,product.id]">
 				<td>{{product.name}}</td>
 				
 				<td>{{product.created_at|date}}</td>
@@ -19,6 +19,8 @@
 			
 		</tbody>
 	</table>
+
+	
 </body>
 
 

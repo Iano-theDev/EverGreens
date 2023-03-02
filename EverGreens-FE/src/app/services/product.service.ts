@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product.model';
+import { Observable } from 'rxjs';
+import { Params } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +10,7 @@ import { Product } from '../models/product.model';
 export class ProductService {
 
   products: Product[] = []
+  params!: Observable<Params>;
 
   constructor(private http: HttpClient) { 
     this.products = []
@@ -16,16 +19,20 @@ export class ProductService {
   getProducts(){
     return this.http.get('https://ridespark.ml/api/products');
   }
-  getProduct(id: string){
-    this.http.get('http://localhost:4000/api/products/'+id).subscribe((res) => {
-      let response = res as any;
-      let product = response[0]
-      return product;
-    }
-    );
 
-
+  getProduct(id: string): Observable<Product[]> {
+    return this.http.get<Product[]>('https://ridespark.ml/api/products/' + id);
   }
+  // getProduct(id: string){
+  //   this.http.get('http://localhost:4000/api/products/'+id).subscribe((res) => {
+  //     let response = res as any;
+  //     let product = response[0]
+  //     return product as Product;
+  //   }
+  //   );
+
+
+  // }
 //   {
 //     "name": "Green Capsicum",
 //     "description":"Capsicum green is used either chopped and raw in salads, or cooked in stir-fries or other mixed dishes. They are slightly bitter in taste and crunchy in texture.",
@@ -44,10 +51,32 @@ export class ProductService {
     })
   }
 
-  updateProduct(product: Product): void {
-    const index = this.products.findIndex((p) => p.id === product.id);
-    this.products[index] = product;
+  updateProduct(product: Product): Observable<Product[]> {
+    const url = `https://ridespark.ml/api/products/${product.id}`;
+    console.log("product",product);
+    
+    return this.http.put<Product[]>(url, product)
   }
+    
+  
+  softDelete(product: Product):Observable<Product[]>{
+   
+    const url = `http://localhost:4000/api/products/${product.id}`;
+    return this.http.delete<Product[]>(url)
+
+  }
+      
+  
+  
+
+  // updateProduct(product: Product): void {
+  //   this.http.put('http://ridespark.ml/api/products/1',product).subscribe((res)=>{
+  //     return (res);
+      
+  //   })
+  //   const index = this.products.findIndex((p) => p.id === product.id);
+  //   this.products[index] = product;
+  // }
 
   deleteProduct(id: string): void {
     const index = this.products.findIndex((p) => p.id === id);
