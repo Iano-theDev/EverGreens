@@ -22,18 +22,18 @@ Content-Type: application/json
 
 ### 4. Update a user
 
-PUT   http://localhost:4000/api/users/7b0c4428-a655-4e44-86a0-8866d73013ae
+PUT   http://localhost:4000/api/users/f73f701b-6115-457c-880f-f454206b9ddc
 Content-Type: application/json
 
 {
-    "id": "7b0c4428-a655-4e44-86a0-8866d73013ae",
-    "email": "onesmus1024@gmail.com",
+    "id": "f73f701b-6115-457c-880f-f454206b9ddc",
+    "email": "sinceianmike@gmail.com",
     "password": "123456",
-    "created_at": "2023-02-28T00:00:00.000Z",
+    "created_at": "2023-03-01T00:00:00.000Z",
     "is_admin": true,
     "is_deleted": false,
     "phone": "0710383551",
-    "is_sent": false
+    "is_sent": true
   }
   
 

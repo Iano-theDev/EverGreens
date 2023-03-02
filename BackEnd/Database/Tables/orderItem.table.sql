@@ -10,3 +10,6 @@ CREATE TABLE Order_items (
     FOREIGN KEY (order_id) REFERENCES orders(id),
     FOREIGN KEY (product_id) REFERENCES products(id),
 );
+
+
+DELETE FROM Order_items;
