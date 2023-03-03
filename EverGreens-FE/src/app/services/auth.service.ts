@@ -11,7 +11,7 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router,private userService: UserService) { }
 
   login(email: string, password: string) {
-    this.http.post('https://ridespark.ml/api/users/login', { email, password }).subscribe((res) => {
+    this.http.post('http://ridespark.ml/api/users/login', { email, password }).subscribe((res) => {
       let response = res as any;
       let token = response.token;
       let user = response.user;

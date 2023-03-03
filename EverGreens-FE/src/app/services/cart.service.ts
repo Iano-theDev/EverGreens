@@ -72,13 +72,13 @@ export class CartService {
 
     console.log(this.getCartTotal());
 
-    this.http.post('http://localhost:4000/api/orders', { user_id: '5abc6e23-9e9f-4ac4-bb7e-854c46b9a1ae', is_paid: "0", is_delivered: "0", amount: this.getCartTotal().toString(),is_sent:'0',is_updated:'0' }).subscribe((res) => {
+    this.http.post('https://ridespark.ml/api/orders', { user_id: '5abc6e23-9e9f-4ac4-bb7e-854c46b9a1ae', is_paid: "0", is_delivered: "0", amount: this.getCartTotal().toString(),is_sent:'0',is_updated:'0' }).subscribe((res) => {
       console.log(res);
       let response = res as any;
       orderId = response[0].id;
       console.log("order inside", orderId);
       this.cartItems.forEach(item => {
-        this.http.post(' http://localhost:4000/api/orderitems', { order_id: orderId, product_id: item.product.id, quantity: item.quantity.toString() }).subscribe((res) => {
+        this.http.post(' https://ridespark.ml/api/orderitems', { order_id: orderId, product_id: item.product.id, quantity: item.quantity.toString() }).subscribe((res) => {
 
           this.emptyCart();
           this.isLoading = false;
