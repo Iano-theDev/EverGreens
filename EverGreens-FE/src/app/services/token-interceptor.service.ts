@@ -9,7 +9,7 @@ export class TokenInterceptorService implements HttpInterceptor {
   constructor() { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-    if (req.url == 'http://localhost:4000/api/users/login' || req.url == 'http://localhost:4000/api/users/register') {
+    if (req.url == 'https://ridespark.ml/api/users/login' || req.url == 'https://ridespark.ml/api/users/register') {
       return next.handle(req);
     }
     else {

@@ -30,7 +30,7 @@ export class ProductService {
   }
 
   updateProduct(product: Product) {
-    const url = `http://localhost:4000/api/products/${product.id}`;
+    const url = `https://ridespark.ml/api/products/${product.id}`;
     console.log("product",product);
     
     return this.http.put(url, product)
